@@ -1,0 +1,213 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+"\<Ejercicios\>","Subsection",ExpressionUUID -> "3302aab9-b5ce-40b4-9f28-bbdb94099ef8"],Cell[
+TextData[
+{"\n","Ejercicio"," ","1",StyleBox[RowBox[{":"," "}]],"En"," ","una"," ","universidad",StyleBox[
+RowBox[{","," "}]],"la"," ","probabilidad"," ","de"," ","que"," ","1"," ","miembro"," ","de"," ","staff"," ","est\[EAcute]"," ","ausente"," ","es"," ","de"," ","0",".","01",StyleBox[
+RowBox[{","," "}]],"si"," ","se"," ","tienen"," ","200"," ","miembros"," ","de"," ","staff",StyleBox[
+RowBox[{","," "}]],"\[DownQuestion]cual"," ","es"," ","la"," ","probabilidad"," ","de"," ","tener"," ","menos"," ","de"," ","3"," ","miembros"," ","de"," ","staff"," ","ausentes","?"}],
+"Text",ExpressionUUID -> "8fd7bb33-a93b-4de1-903f-6cfaeff9601f"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"p1","=","0.01"}],";",RowBox[{"n1","=","200"}],";",RowBox[
+{"\[Lambda]1","=",RowBox[{"p1"," ","n1"}]}],";"}],"\n",RowBox[{RowBox[{"prob1auto","=",RowBox[
+{"Probability","[",RowBox[{RowBox[{"x","<","3"}],",",RowBox[{"x","\[Distributed]",RowBox[
+{"PoissonDistribution","[","\[Lambda]1","]"}]}]}],"]"}]}],"\n",RowBox[{"prob1manual","=",RowBox[
+{"Sum","[",RowBox[{RowBox[{RowBox[{"E","^",RowBox[{"(",RowBox[{"-","\[Lambda]1"}],")"}]}],RowBox[
+{RowBox[{RowBox[{"(","\[Lambda]1",")"}],"^","n"}],"/",RowBox[{"n","!"}]}]}],",",RowBox[
+{"{",RowBox[{"n",",","0",",","2"}],"}"}]}],"]"}]}]}]}],"Input",CellLabel -> "In[1]:= ",
+ExpressionUUID -> "820efcba-f937-4d61-86bd-0a72d6b9ed62"],Cell[
+BoxData["0.6766764161830635`",
+StandardForm],"Output",CellLabel -> "Out[2]= ",ExpressionUUID -> "2557e920-3abf-4ccd-8123-8458f0f5e87e"],Cell[
+BoxData[
+"0.6766764161830635`",StandardForm],"Output",CellLabel -> "Out[3]= ",ExpressionUUID -> "ea7f6337-7301-4bb4-b2a2-0fee2392741e"]},
+Open],ExpressionUUID -> "dbb2947b-175c-47f2-a34b-41d3df875f2f"],Cell[
+BoxData["0.6766764161830635`",
+StandardForm],"Output",CellLabel -> "Out[73]= ",ExpressionUUID -> "bdf3d0ef-5f07-4824-9938-9f9dae3b0cef"],Cell[
+BoxData[
+"0.6766764161830635`",StandardForm],"Output",CellLabel -> "Out[74]= ",ExpressionUUID -> "13f515e6-d387-42a3-b5d2-3a0d5eafccfb"],Cell[
+TextData[
+{"Ejercicio"," ","2",StyleBox[RowBox[{":"," "}]],"Si"," ","se"," ","sabe"," ","que"," ","en"," ","250"," ","litros"," ","de"," ","agua"," ","se"," ","tienen"," ","aproximadamente"," ","10","^","6"," ","bacterias",StyleBox[
+RowBox[{","," "}]],"\[DownQuestion]cu\[AAcute]l"," ","es"," ","la"," ","probabilidad"," ","de"," ","que"," ","en"," ","1"," ","mililitro"," ","no"," ","se"," ","encuentre"," ","ni"," ","una"," ","sola"," ","bacteria","?"}],
+"Text",ExpressionUUID -> "99d8f87b-2026-401a-a769-76ba974d18b5"],Cell[
+TextData[{"\[Lambda]","2"," ","termina"," ","siendo"," ","la"," ","media",StyleBox[
+RowBox[{" ","("}]],"igual"," ","a"," ","np",StyleBox[RowBox[{")"," "}]],"de"," ","cu\[AAcute]ntas"," ","bacterias"," ","se"," ","encuentran"," ","en"," ","1"," ","mililitro",":"}],
+"Text",ExpressionUUID -> "3dd008b6-7cce-4f9d-8f9b-c2eae8229eed"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{"\[Lambda]2","=",RowBox[{RowBox[{"10","^","6"}],"/",RowBox[
+{"(",RowBox[{"250"," ","1000"}],")"}]}]}],"\n",RowBox[{"prob2auto","=",RowBox[{RowBox[
+{"Probability","[",RowBox[{RowBox[{"x","==","0"}],",",RowBox[{"x","\[Distributed]",RowBox[
+{"PoissonDistribution","[","\[Lambda]2","]"}]}]}],"]"}],"//","N"}]}]}],"Input",ExpressionUUID -> "09a28a36-eb03-4107-bb0b-95228eee2132"],Cell[
+BoxData[
+"0.01831563888873418`",StandardForm],"Output",CellLabel -> "Out[16]= ",ExpressionUUID -> "81f0d096-f692-4d2b-abc2-cb6cf4b13dcc"]},
+Open],ExpressionUUID -> "26e36683-1e09-4c19-97ec-6fcd7383af23"],Cell[
+TextData[{"Ejercicio"," ","3",StyleBox[
+RowBox[{":"," "}]],"A"," ","lo"," ","largo"," ","de"," ","un"," ","a\[NTilde]o",StyleBox[
+RowBox[{","," "}]],"1"," ","millon"," ","de"," ","\[AAcute]tomos"," ","de"," ","Cesio"," ","137"," ","decayeron"," ","por"," ","procesos"," ","at\[OAcute]micos"," ","a"," ","un"," ","total"," ","de"," ","977287"," ","\[AAcute]tomos",StyleBox[
+RowBox[{"."," "}]],"Hayar"," ","la"," ","probabilidad"," ","de"," ","que",StyleBox[
+RowBox[{","," "}]],"en"," ","un"," ","d\[IAcute]a"," ","cualquiera",StyleBox[RowBox[
+{","," "}]],"hubieran"," ","deca\[IAcute]do"," ","50"," ","\[AAcute]tomos","."}],
+"Text",ExpressionUUID -> "be2a6002-f1cf-431e-b466-ebe6c25812f3"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"\[Lambda]3","=",RowBox[{RowBox[{"(",RowBox[{"1000000","-","977287"}],")"}],"/","365"}]}],";"}],"\n",RowBox[
+{"prob3","=",RowBox[{RowBox[{"Probability","[",RowBox[{RowBox[{"x","==","50"}],",",RowBox[
+{"x","\[Distributed]",RowBox[{"PoissonDistribution","[","\[Lambda]3","]"}]}]}],"]"}],"//","N"}]}]}],
+"Input",CellLabel -> "In[23]:= ",ExpressionUUID -> "738d739c-cd9f-46a4-a59e-e40530c9f79d"],Cell[
+BoxData[
+"0.015523573295731482`",StandardForm],"Output",CellLabel -> "Out[24]= ",ExpressionUUID -> "ce0657fb-a5ca-4571-bb6e-d6bb414dd5ac"]},
+Open],ExpressionUUID -> "1b66f1a6-3cc8-4a26-88c8-4c61b7923645"],Cell[
+TextData[{"Ejercicio"," ","4",StyleBox[
+RowBox[{":"," "}]],"En"," ","un"," ","pueblo"," ","de"," ","10",".","000"," ","habitantes"," ","se"," ","quiere"," ","construir"," ","en"," ","el"," ","hospital"," ","local"," ","un"," ","pabell\[OAcute]n"," ","de"," ","cirug\[IAcute]as",StyleBox[
+RowBox[{","," "}]],"se"," ","ha"," ","evidenciado"," ","que"," ","en"," ","este"," ","pueblo"," ","se"," ","suele"," ","tener"," ","un"," ","promedio"," ","de"," ","3"," ","pacientes"," ","en"," ","necesidad"," ","de"," ","una"," ","cirug\[IAcute]a"," ","por"," ","d\[IAcute]a",StyleBox[
+RowBox[{"."," "}]],"\[DownQuestion]Cu\[AAcute]l"," ","es"," ","la"," ","capacidad"," ","m\[IAcute]nima"," ","que"," ","este"," ","nuevo"," ","pabell\[OAcute]n"," ","debe"," ","tener"," ","para"," ","que",StyleBox[
+RowBox[{","," "}]],"en"," ","general",StyleBox[RowBox[{","," "}]],"no"," ","se"," ","tengan"," ","m\[AAcute]s"," ","de"," ","5"," ","d\[IAcute]as"," ","al"," ","a\[NTilde]o"," ","donde"," ","se"," ","exceda"," ","su"," ","capacidad","?"}],
+"Text",ExpressionUUID -> "de8e3bd0-d3e1-47f4-ad70-833b8e544e57"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"\[Lambda]4","=","3"}],";"}],"\n",RowBox[{"pp","=",RowBox[
+{"Probability","[",RowBox[{RowBox[{"x","\[LessEqual]","n"}],",",RowBox[{"x","\[Distributed]",RowBox[
+{"PoissonDistribution","[","\[Lambda]4","]"}]}]}],"]"}]}]}],"Input",CellLabel -> "In[25]:= ",
+ExpressionUUID -> "16c6fb8a-360d-4e78-9a28-f14f3cb3eff4"],Cell[
+BoxData[TagBox[GridBox[
+{{"\[Piecewise]",GridBox[{{FractionBox[RowBox[{"Gamma","[",RowBox[{RowBox[{"1","+",RowBox[
+{"Floor","[","n","]"}]}],",","3"}],"]"}],RowBox[{"Gamma","[",RowBox[{"1","+",RowBox[
+{"Floor","[","n","]"}]}],"]"}]],RowBox[{RowBox[{"Floor","[","n","]"}],"\[GreaterEqual]","0"}]},{"0",TagBox[
+"True","PiecewiseDefault",AutoDelete -> True]}},ColumnAlignments -> {Left},ColumnSpacings -> 1.2`,
+ColumnWidths -> Automatic,AllowedDimensions -> {2,Automatic},Selectable -> True,Editable -> True]}},
+ColumnAlignments -> {Left},ColumnSpacings -> 0.5`,ColumnWidths -> Automatic],"Piecewise",
+SyntaxForm -> Equal,SelectWithContents -> True,StripWrapperBoxes -> True,Selectable -> False,
+Editable -> False,DeleteWithContents -> True],StandardForm],"Output",CellLabel -> "Out[26]= ",
+ExpressionUUID -> "da512924-a005-4906-8fc6-69d6fde2acdb"]},Open],ExpressionUUID -> "f163e041-1722-4eed-b14b-158d9198249e"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"pexpected","=",RowBox[{RowBox[{RowBox[{"(",RowBox[{"365","-","5"}],")"}],"/","365"}],"//","N"}]}]],
+"Input",CellLabel -> "In[27]:= ",ExpressionUUID -> "cf6daeb7-f824-401e-ba8a-3b8d3acd3d8b"],Cell[
+BoxData[
+"0.9863013698630136`",StandardForm],"Output",CellLabel -> "Out[27]= ",ExpressionUUID -> "be576031-e665-46fd-8d42-09546138b42d"]},
+Open],ExpressionUUID -> "a11111f4-ed05-4836-941e-0ba5da14f219"],Cell[
+BoxData[RowBox[
+{"Reduce","[",RowBox[{RowBox[{"pp","==","pexpected"}],",","n",",","Reals"}],"]"}]],
+"Input",CellLabel -> "In[28]:= ",ExpressionUUID -> "af886f61-1883-482a-ac5a-8bebdfc71cce"],Cell[
+BoxData[
+TemplateBox[{"Reduce","inex","\"Reduce was unable to solve the system with inexact coefficients or the system obtained by direct rationalization of inexact numbers present in the system. Since many of the methods used by Reduce require exact input, providing Reduce with an exact version of the system may help.\"",2,28,2,28426835076443867760,"Local"},
+"MessageTemplate"],StandardForm],"MSG","Message",ExpressionUUID -> "53c3cea4-bac6-4803-9850-0eebf5a5c269"],Cell[
+BoxData[
+RowBox[{"Reduce","[",RowBox[{RowBox[{RowBox[{"(",TagBox[GridBox[{{"\[Piecewise]",GridBox[
+{{FractionBox[RowBox[{"Gamma","[",RowBox[{RowBox[{"1","+",RowBox[{"Floor","[","n","]"}]}],",","3"}],"]"}],
+RowBox[{"Gamma","[",RowBox[{"1","+",RowBox[{"Floor","[","n","]"}]}],"]"}]],RowBox[
+{RowBox[{"Floor","[","n","]"}],"\[GreaterEqual]","0"}]},{"0",TagBox["True","PiecewiseDefault",
+AutoDelete -> True]}},ColumnAlignments -> {Left},ColumnSpacings -> 1.2`,ColumnWidths -> Automatic,
+AllowedDimensions -> {2,Automatic},Selectable -> True,Editable -> True]}},ColumnAlignments -> {Left},
+ColumnSpacings -> 0.5`,ColumnWidths -> Automatic],"Piecewise",SyntaxForm -> Equal,
+SelectWithContents -> True,StripWrapperBoxes -> True,Selectable -> False,Editable -> False,
+DeleteWithContents -> True],")"}],"\[Equal]","0.9863013698630136`"}],",","n",",",TemplateBox[
+{},"Reals"]}],"]"}],StandardForm],"Output",CellLabel -> "Out[28]= ",ExpressionUUID -> "c807032a-98f8-4329-a991-a6147e5548db"],Cell[
+TextData[
+{"Parece"," ","ser"," ","que"," ","reduce"," ","no"," ","es"," ","capaz"," ","de"," ","encontrar"," ","soluci\[OAcute]n",StyleBox[
+RowBox[{","," "}]],"pero"," ","podemos"," ","hacerlo"," ","simplemente"," ","chequeando"," ","a"," ","cada"," ","n\[UAcute]mero"," ","entero"," ","hasta"," ","un"," ","cierto"," ","threshold",StyleBox[
+RowBox[{","," "}]],"en"," ","la"," ","siguiente"," ","tabla"," ","tenemos"," ","los"," ","n\[UAcute]meros"," ","que"," ","s\[IAcute]"," ","cumplen"," ","nuestra"," ","condici\[OAcute]n"," ","hasta"," ","diez",StyleBox[
+RowBox[{","," "}]],"aunque"," ","solo"," ","nos"," ","importe"," ","el"," ","primero",StyleBox[
+RowBox[{","," "}]],"sin"," ","saber"," ","cu\[AAcute]l"," ","es",StyleBox[RowBox[
+{","," "}]],"es"," ","una"," ","opci\[OAcute]n"," ","simplemente"," ","probar"," ","con"," ","la"," ","tabla"," ","hasta"," ","un"," ","n\[UAcute]mero"," ","x",StyleBox[
+RowBox[{","," "}]],"si"," ","ninguno"," ","funciona",StyleBox[RowBox[{","," "}]],"aumenta"," ","x"," ","hasta"," ","que"," ","encuentres"," ","uno"," ","que"," ","lo"," ","haga",":"}],
+"Text",ExpressionUUID -> "b608d747-20bb-48af-a3ae-c12a6372c8b5"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Table","[",RowBox[{RowBox[{"If","[",RowBox[{RowBox[
+{"pp","\[GreaterEqual]","pexpected"}],",",RowBox[{"n","\[Rule]","pp"}],",","Nothing"}],"]"}],",",RowBox[
+{"{",RowBox[{"n",",","0",",","10"}],"}"}]}],"]"}],"//","N"}]],"Input",CellLabel -> "In[29]:= ",
+ExpressionUUID -> "b4602c4a-4a84-4a3c-bc6d-767b1200f3b4"],Cell[
+BoxData[RowBox[{"{",RowBox[
+{RowBox[{"7.`","\[Rule]","0.9880954961436427`"}],",",RowBox[{"8.`","\[Rule]","0.996197007938324`"}],",",RowBox[
+{"9.`","\[Rule]","0.9988975118698846`"}],",",RowBox[{"10.`","\[Rule]","0.9997076630493527`"}]}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[29]= ",ExpressionUUID -> "9a68b0b7-1edf-42fa-9ed6-0efd4cb8ebc4"]},
+Open],ExpressionUUID -> "a2e09027-9ba9-438b-9797-f06372962e8a"],Cell[
+TextData[{"Como"," ","7"," ","es"," ","el"," ","primero"," ","que"," ","funciona",StyleBox[
+RowBox[{","," "}]],"nuestra"," ","respuesta"," ","es"," ","7","."}],"Text",ExpressionUUID -> "d0d0e0fb-f4de-4297-81cc-844d27b95595"],Cell[
+TextData[
+{"Ejercicio"," ","5",StyleBox[RowBox[{":"," "}]],"En"," ","una"," ","regi\[OAcute]n"," ","de"," ","cierto"," ","pa\[IAcute]s"," ","se"," ","tiene"," ","una"," ","serie"," ","de"," ","centros"," ","urbanos"," ","de"," ","poblaci\[OAcute]n"," ","similar",StyleBox[
+RowBox[{"."," "}]],"Se"," ","quiere"," ","construir"," ","una"," ","central"," ","de"," ","generaci\[OAcute]n"," ","el\[EAcute]ctrica"," ","que"," ","cubra"," ","la"," ","demanda"," ","de"," ","esta"," ","regi\[OAcute]n",StyleBox[
+RowBox[{","," "}]],"se"," ","sabe"," ","que"," ","el"," ","consumo"," ","el\[EAcute]ctrico"," ","por"," ","c\[AAcute]pita"," ","de"," ","la"," ","regi\[OAcute]n"," ","es"," ","de"," ","500"," ","Watts",StyleBox[
+RowBox[{","," "}]],"cada"," ","centro"," ","poblacional"," ","tiene"," ","un"," ","total"," ","de"," ","100",".","000"," ","personas",StyleBox[
+RowBox[{","," "}]],"asumiendo"," ","que"," ","la"," ","capacidad"," ","de"," ","la"," ","nueva"," ","central"," ","es"," ","de"," ","1"," ","GW",":","\n","\n","a",StyleBox[
+RowBox[{")"," "}]],"\[DownQuestion]Cual"," ","es"," ","la"," ","probabilidad"," ","de"," ","que"," ","1"," ","centro"," ","urbano"," ","exceda"," ","la"," ","capacidad"," ","de"," ","la"," ","central","?\n","\n","b) \[DownQuestion]Cu\[AAcute]ntas ciudades puede mantener esta central si queremos que no se exceda su capacidad el 95% del tiempo?\n","\n","c) \[DownQuestion]Y el caso donde la central es capaz de producir \"m\" GW?"}],
+"Text",ExpressionUUID -> "6c9804c7-50f2-433d-9fe8-c4bdc84a6a2e"],Cell[
+TextData[{"Nuestro",StyleBox[
+RowBox[{" ","\[Lambda]"}]],"5a"," ","es"," ","nuestra"," ","media"," ","de"," ","utilizaci\[OAcute]n"," ","de"," ","la"," ","planta",StyleBox[
+RowBox[{","," "}]],"que"," ","es"," ","consumo"," ","per"," ","c\[AAcute]pita"," ","por"," ","personas"," ","por"," ","ciudad",StyleBox[
+RowBox[{","," "}]],"en"," ","GigaWatts",StyleBox[RowBox[{","," "}]],"la"," ","que"," ","termina"," ","siendo",":"}],
+"Text",ExpressionUUID -> "d63e4f63-e954-46d4-b2bc-362b1c745540"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"\[Lambda]5a","=",RowBox[{"500","*",RowBox[{"100000","/",RowBox[
+{"(",RowBox[{"10","^","9"}],")"}]}]}]}]],"Input",CellLabel -> "In[33]:= ",ExpressionUUID -> "d9f835af-0216-4bda-b0e6-545de59d6bb1"],Cell[
+BoxData[
+FractionBox["1","20"],StandardForm],"Output",CellLabel -> "Out[33]= ",ExpressionUUID -> "095753d4-d8af-4954-9498-096caebcf5f1"]},
+Open],ExpressionUUID -> "be43293c-4c4c-49cf-80ea-cc09eb21f782"],Cell[
+TextData[{"Asumiendo"," ","que"," ","la"," ","distribuici\[OAcute]n"," ","de"," ","cada"," ","persona"," ","es"," ","una"," ","de"," ","Poisson",StyleBox[
+RowBox[{","," "}]],"nuestra"," ","nueva"," ","distribuci\[OAcute]n"," ","de"," ","la"," ","suma"," ","de"," ","todas"," ","las"," ","personas"," ","en"," ","un"," ","centro"," ","urbano"," ","es"," ","tambi\[EAcute]n"," ","una"," ","de"," ","Poisson",StyleBox[
+RowBox[{","," "}]],"por"," ","esto"," ","es"," ","que"," ","podemos"," ","hacer"," ","este"," ","c\[AAcute]lculo",StyleBox[
+RowBox[{"."," "}]],"Ahora",StyleBox[RowBox[{","," "}]],"la"," ","probabilidad"," ","es",":"}],
+"Text",ExpressionUUID -> "90ef48c5-b918-4773-8f76-fe7487a762cb"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"prob5a","=",RowBox[{"Probability","[",RowBox[{RowBox[
+{"x",">","1"}],",",RowBox[{"x","\[Distributed]",RowBox[{"PoissonDistribution","[","\[Lambda]5a","]"}]}]}],"]"}]}],";",RowBox[
+{"Print","[",RowBox[{"100",RowBox[{"N","[","prob5a","]"}],"\"%\""}],"]"}]}]],"Input",
+CellLabel -> "In[34]:= ",ExpressionUUID -> "3ef8fb47-acbb-4ec8-893b-8a009ff5305e"],Cell[
+BoxData[
+RowBox[{"0.12091042742504061`"," ","\"%\""}],StandardForm],"Print",ExpressionUUID -> "e78e021c-c78d-47a2-83a2-0a24e714f14c"]},
+Open],ExpressionUUID -> "1e65a291-4412-4a33-9092-938ba363bfc3"],Cell[
+TextData[{"La"," ","parte"," ","final"," ","es"," ","simplemente"," ","para"," ","mostrarla"," ","m\[AAcute]s"," ","bella",StyleBox[
+RowBox[{","," "}]],"en"," ","formato"," ","porcentual","."}],"Text",ExpressionUUID -> "63befd08-4c3b-4196-92fc-3fd2bd0b7ab5"],Cell[
+TextData[
+{"Ahora",StyleBox[RowBox[{","," "}]],"nuestro"," ","nuevo",StyleBox[RowBox[{" ","\[Lambda]"}]],"5b"," ","incluye"," ","un"," ","t\[EAcute]rmino"," ","n",StyleBox[
+RowBox[{","," "}]],"que"," ","nos"," ","dice"," ","ahora"," ","cu\[AAcute]ntas"," ","ciudades"," ","tendremos",":"}],
+"Text",ExpressionUUID -> "b489b34a-bf7e-4135-a53d-eb0063b2bcaf"],Cell[
+BoxData[RowBox[
+{RowBox[{"\[Lambda]5b","=",RowBox[{"n"," ","\[Lambda]5a"}]}],";"}]],"Input",CellLabel -> "In[35]:= ",
+ExpressionUUID -> "8d1970fb-f584-440c-97fb-24d2b6858c8a"],Cell[
+TextData[{"Ahora"," ","que"," ","tenemos"," ","un",StyleBox[
+RowBox[{" ","\[Lambda]"}]],"5b"," ","dependiendo"," ","de"," ","n",StyleBox[RowBox[
+{","," "}]],"y"," ","sabemos"," ","la"," ","probabilidad"," ","objetivo"," ","de"," ","95",StyleBox[
+RowBox[{"%,"," "}]],"podemos"," ","resolver"," ","para"," ","cuando"," ","estamos"," ","fuera"," ","de"," ","lo"," ","esperado",StyleBox[
+RowBox[{","," "}]],"o"," ","que"," ","nuestro"," ","consumo"," ","en"," ","GigaWatts"," ","est\[AAcute]"," ","por"," ","sobre"," ","lo"," ","que"," ","la"," ","central"," ","puede"," ","dar",StyleBox[
+RowBox[{" ","("}]],"nuestro"," ","caso"," ","opuesto","):"}],"Text",ExpressionUUID -> "b992ea5b-ba81-4712-9e77-94c60812e606"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"Reduce","[",RowBox[{RowBox[{RowBox[{"Probability","[",RowBox[
+{RowBox[{"x",">","1"}],",",RowBox[{"x","\[Distributed]",RowBox[{"PoissonDistribution","[","\[Lambda]5b","]"}]}]}],"]"}],"<",RowBox[
+{"1","-","0.95"}]}],",","n",",","Integers"}],"]"}],"//","Quiet"}]],"Input",CellLabel -> "In[36]:= ",
+ExpressionUUID -> "a33682ef-325c-4c11-9b40-7d21e393b7af"],Cell[
+BoxData[RowBox[{RowBox[
+{"n","\[Element]",TemplateBox[{},"Integers"]}],"&&",RowBox[{RowBox[{"-","5.`"}],"\[LessEqual]","n","\[LessEqual]","7.`"}]}],
+StandardForm],"Output",CellLabel -> "Out[36]= ",ExpressionUUID -> "fee0b2fc-de33-434d-bc86-770de683fa35"]},
+Open],ExpressionUUID -> "b1955da2-898c-41f1-997f-529ab7ef78b0"],Cell[
+TextData[{"Por"," ","lo"," ","tanto",StyleBox[
+RowBox[{","," "}]],"podemos"," ","tener"," ","hasta"," ","7"," ","ciudades"," ","en"," ","este"," ","caso","."}],
+"Text",ExpressionUUID -> "aa2d0c3b-489d-42bd-9287-ed908520c7b1"],Cell[
+TextData[{"Finalmente",StyleBox[
+RowBox[{","," "}]],"tenemos"," ","que"," ","nuestro"," ","consumo"," ","de"," ","todas"," ","las"," ","ciudades"," ","puede"," ","estar"," ","por"," ","encima"," ","de"," ","1",StyleBox[
+RowBox[{","," "}]],"y"," ","puede"," ","llegar"," ","hasta"," ","m",StyleBox[RowBox[
+{","," "}]],"por"," ","lo"," ","que"," ","calculamos",":"}],"Text",ExpressionUUID -> "db74c630-7f02-403b-a6e3-0122822d9c67"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"\[Lambda]5c","=",RowBox[{"n"," ","500"," ",RowBox[
+{"100000","/",RowBox[{"("," ",RowBox[{"10","^","9"}],")"}]}]}]}],";"}],"\n",RowBox[
+{RowBox[{"Table","[",RowBox[{RowBox[{RowBox[{"m","\[Rule]",RowBox[{RowBox[{"Reduce","[",RowBox[
+{RowBox[{RowBox[{"Probability","[",RowBox[{RowBox[{"x",">","m"}],",",RowBox[{"x","\[Distributed]",RowBox[
+{"PoissonDistribution","[","\[Lambda]5c","]"}]}]}],"]"}],"<",RowBox[{"1","-","0.95"}]}],",","n",",","Integers"}],"]"}],"[",RowBox[
+{"[",RowBox[{RowBox[{"-","1"}],",",RowBox[{"-","1"}]}],"]"}],"]"}]}],"//","Quiet"}],",",RowBox[
+{"{",RowBox[{"m",",","1",",","10"}],"}"}]}],"]"}],"//","TableForm"}]}],"Input",CellLabel -> "In[45]:= ",
+ExpressionUUID -> "fb9d0e09-a551-4b2e-ba12-4f1b2804f4c5"],Cell[
+BoxData[TagBox[TagBox[
+GridBox[{{RowBox[{"1","\[Rule]","7.`"}]},{RowBox[{"2","\[Rule]","16.`"}]},{RowBox[
+{"3","\[Rule]","27.`"}]},{RowBox[{"4","\[Rule]","39.`"}]},{RowBox[{"5","\[Rule]","52.`"}]},{RowBox[
+{"6","\[Rule]","65.`"}]},{RowBox[{"7","\[Rule]","79.`"}]},{RowBox[{"8","\[Rule]","93.`"}]},{RowBox[
+{"9","\[Rule]","108.`"}]},{RowBox[{"10","\[Rule]","123.`"}]}},RowSpacings -> 1,ColumnAlignments -> Left,
+ColumnAlignments -> Left],Column],Function[BoxForm`e$,TableForm[BoxForm`e$]]],StandardForm],
+"Output",CellLabel -> "Out[46]//TableForm= ",ExpressionUUID -> "7b7898e5-cc8d-4208-b654-4c56471b905d"]},
+Open],ExpressionUUID -> "68b7f397-c495-4c68-ae37-dba880dbc1a2"]},Open],ExpressionUUID -> "5c7b786f-4002-4cff-a204-b5d8d1de4884"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "14.1 for Wolfram Cloud 1.69.0.1 (September 4, 2024)"]

@@ -1,0 +1,1477 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     62644,       1469]
+NotebookOptionsPosition[     56850,       1384]
+NotebookOutlinePosition[     57290,       1401]
+CellTagsIndexPosition[     57247,       1398]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["Probabilidad  - Ejercitaci\[OAcute]n", "Title"]], \
+"Subtitle",
+ CellChangeTimes->{{3.90216141032146*^9, 3.9021614177524*^9}, {
+  3.902687614559785*^9, 
+  3.902687621303211*^9}},ExpressionUUID->"904b8725-1d5b-4357-bd7c-\
+4815577f4ecc"],
+
+Cell[CellGroupData[{
+
+Cell["Conjunto Muestral y Suceso", "Chapter",
+ CellChangeTimes->{{3.9021614839467173`*^9, 3.902161545338291*^9}, 
+   3.902161667205305*^9, {3.902162898418673*^9, 
+   3.902162901042906*^9}},ExpressionUUID->"5a958624-dbdc-49f2-9a84-\
+7b9f33a4a767"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Probability"}]], "Input",
+ CellChangeTimes->{{3.9028637450439*^9, 3.902863764298852*^9}, {
+  3.902863997589756*^9, 3.902864014140499*^9}, {3.902864434594449*^9, 
+  3.9028644351980257`*^9}, {3.902864790653285*^9, 3.902864791660177*^9}, {
+  3.9028657932602997`*^9, 3.9028657941321373`*^9}, {3.902865828014083*^9, 
+  3.902865858067947*^9}, {3.902865923628381*^9, 3.902865941707992*^9}, {
+  3.9028663305345697`*^9, 3.902866333517618*^9}, {3.902866484272485*^9, 
+  3.902866485938612*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"9038caf3-fbca-4efa-be5d-72bb37a3b329"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"]], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Probability",
+              ButtonNote->"paclet:ref/Probability"],
+             "\"paclet:ref/Probability\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", RowBox[{StyleBox[\\\"x\
+\\\", \\\"TI\\\"], \\\"\[Distributed]\\\", StyleBox[\\\"dist\\\", \
+\\\"TI\\\"]}]}], \\\"]\\\"}]\\) gives the probability for an event that \
+satisfies the predicate \\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under \
+the assumption that \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) follows the \
+probability distribution \\!\\(\\*StyleBox[\\\"dist\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", RowBox[{StyleBox[\\\"x\
+\\\", \\\"TI\\\"], \\\"\[Distributed]\\\", StyleBox[\\\"data\\\", \
+\\\"TI\\\"]}]}], \\\"]\\\"}]\\) gives the probability for an event that \
+satisfies the predicate \\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under \
+the assumption that \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) follows the \
+probability distribution given by \\!\\(\\*StyleBox[\\\"data\\\", \\\"TI\\\"]\
+\\).\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\"\[Distributed]\\\", StyleBox[\\\"dist\\\", \\\"TI\\\"]}]}], \\\"]\\\
+\"}]\\) gives the probability that an event satisfies \
+\\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under the assumption that \
+\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\
+\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\
+\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]\\) follows the multivariate \
+distribution \\!\\(\\*StyleBox[\\\"dist\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\"\[Distributed]\\\", \
+SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\
+\"]]}], \\\",\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\"\[Distributed]\\\", \
+SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\
+\"]]}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) gives the probability that an event satisfies \
+\\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under the assumption that \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \\\
+\"TR\\\"]]\\), \\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]]\\), \[Ellipsis] are independent and follow \
+the distributions \\!\\(\\*SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]]\\), \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]]\\), \[Ellipsis].\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\
+\", RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"pred\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\"\[Conditioned]\\\", \
+SubscriptBox[StyleBox[\\\"pred\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\
+\"]]}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"]\\\"}]\\) gives the conditional probability of \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"pred\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]]\\) given \\!\\(\\*SubscriptBox[StyleBox[\\\"pred\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]]\\).\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Documentation\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Documentation", "Tooltip"]& ], 
+                   TemplateBox[{
+                    
+                    TemplateBox[{
+                    "\"Local \[RightGuillemet]\"", "paclet:ref/Probability", 
+                    "paclet:ref/Probability", "Link", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"], "\"  \"", 
+                    StyleBox[
+                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
+                    "\"  \"", 
+                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
+                    URL[
+                    "http://reference.wolfram.com/language/ref/Probability.\
+html"], None}, "http://reference.wolfram.com/language/ref/Probability.html", 
+                    "Hyperlink", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"]},
+                    "RowDefault"]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{"Protected", ",", "ReadProtected"}], "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"System`Probability\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"],
+                ImageSizeCache->{13., {4., 9.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"],
+                ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Probability",
+              ButtonNote->"paclet:ref/Probability"],
+             "\"paclet:ref/Probability\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", RowBox[{StyleBox[\\\"x\
+\\\", \\\"TI\\\"], \\\"\[Distributed]\\\", StyleBox[\\\"dist\\\", \
+\\\"TI\\\"]}]}], \\\"]\\\"}]\\) gives the probability for an event that \
+satisfies the predicate \\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under \
+the assumption that \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) follows the \
+probability distribution \\!\\(\\*StyleBox[\\\"dist\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", RowBox[{StyleBox[\\\"x\
+\\\", \\\"TI\\\"], \\\"\[Distributed]\\\", StyleBox[\\\"data\\\", \
+\\\"TI\\\"]}]}], \\\"]\\\"}]\\) gives the probability for an event that \
+satisfies the predicate \\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under \
+the assumption that \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) follows the \
+probability distribution given by \\!\\(\\*StyleBox[\\\"data\\\", \\\"TI\\\"]\
+\\).\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\"\[Distributed]\\\", StyleBox[\\\"dist\\\", \\\"TI\\\"]}]}], \\\"]\\\
+\"}]\\) gives the probability that an event satisfies \
+\\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under the assumption that \
+\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\
+\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\
+\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]\\) follows the multivariate \
+distribution \\!\\(\\*StyleBox[\\\"dist\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"pred\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\"\[Distributed]\\\", \
+SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\
+\"]]}], \\\",\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\"\[Distributed]\\\", \
+SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\
+\"]]}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) gives the probability that an event satisfies \
+\\!\\(\\*StyleBox[\\\"pred\\\", \\\"TI\\\"]\\) under the assumption that \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \\\
+\"TR\\\"]]\\), \\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]]\\), \[Ellipsis] are independent and follow \
+the distributions \\!\\(\\*SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]]\\), \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"dist\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]]\\), \[Ellipsis].\\n\\!\\(\\*RowBox[{\\\"Probability\\\", \\\"[\\\
+\", RowBox[{RowBox[{SubscriptBox[StyleBox[\\\"pred\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\"\[Conditioned]\\\", \
+SubscriptBox[StyleBox[\\\"pred\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\
+\"]]}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"]\\\"}]\\) gives the conditional probability of \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"pred\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]]\\) given \\!\\(\\*SubscriptBox[StyleBox[\\\"pred\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]]\\).\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "\!\(\*RowBox[{\"Probability\", \"[\", RowBox[{StyleBox[\"pred\", \
+\"TI\"], \",\", RowBox[{StyleBox[\"x\", \"TI\"], \"\[Distributed]\", \
+StyleBox[\"dist\", \"TI\"]}]}], \"]\"}]\) gives the probability for an event \
+that satisfies the predicate \!\(\*StyleBox[\"pred\", \"TI\"]\) under the \
+assumption that \!\(\*StyleBox[\"x\", \"TI\"]\) follows the probability \
+distribution \!\(\*StyleBox[\"dist\", \"TI\"]\).\n\!\(\*RowBox[{\"Probability\
+\", \"[\", RowBox[{StyleBox[\"pred\", \"TI\"], \",\", RowBox[{StyleBox[\"x\", \
+\"TI\"], \"\[Distributed]\", StyleBox[\"data\", \"TI\"]}]}], \"]\"}]\) gives \
+the probability for an event that satisfies the predicate \
+\!\(\*StyleBox[\"pred\", \"TI\"]\) under the assumption that \
+\!\(\*StyleBox[\"x\", \"TI\"]\) follows the probability distribution given by \
+\!\(\*StyleBox[\"data\", \"TI\"]\).\n\!\(\*RowBox[{\"Probability\", \"[\", \
+RowBox[{StyleBox[\"pred\", \"TI\"], \",\", RowBox[{RowBox[{\"{\", \
+RowBox[{SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"1\", \"TR\"]], \
+\",\", SubscriptBox[StyleBox[\"x\", \"TI\"], StyleBox[\"2\", \"TR\"]], \",\", \
+StyleBox[\"\[Ellipsis]\", \"TR\"]}], \"}\"}], \"\[Distributed]\", \
+StyleBox[\"dist\", \"TI\"]}]}], \"]\"}]\) gives the probability that an event \
+satisfies \!\(\*StyleBox[\"pred\", \"TI\"]\) under the assumption that \
+\!\(\*RowBox[{\"{\", RowBox[{SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"1\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"2\", \"TR\"]], \",\", StyleBox[\"\[Ellipsis]\", \"TR\"]}], \"}\"}]\
+\) follows the multivariate distribution \!\(\*StyleBox[\"dist\", \"TI\"]\).\n\
+\!\(\*RowBox[{\"Probability\", \"[\", RowBox[{StyleBox[\"pred\", \"TI\"], \",\
+\", RowBox[{\"{\", RowBox[{RowBox[{SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"1\", \"TR\"]], \"\[Distributed]\", SubscriptBox[StyleBox[\"dist\", \
+\"TI\"], StyleBox[\"1\", \"TR\"]]}], \",\", RowBox[{SubscriptBox[StyleBox[\"x\
+\", \"TI\"], StyleBox[\"2\", \"TR\"]], \"\[Distributed]\", \
+SubscriptBox[StyleBox[\"dist\", \"TI\"], StyleBox[\"2\", \"TR\"]]}], \",\", \
+StyleBox[\"\[Ellipsis]\", \"TR\"]}], \"}\"}]}], \"]\"}]\) gives the \
+probability that an event satisfies \!\(\*StyleBox[\"pred\", \"TI\"]\) under \
+the assumption that \!\(\*SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"1\", \"TR\"]]\), \!\(\*SubscriptBox[StyleBox[\"x\", \"TI\"], \
+StyleBox[\"2\", \"TR\"]]\), \[Ellipsis] are independent and follow the \
+distributions \!\(\*SubscriptBox[StyleBox[\"dist\", \"TI\"], StyleBox[\"1\", \
+\"TR\"]]\), \!\(\*SubscriptBox[StyleBox[\"dist\", \"TI\"], StyleBox[\"2\", \
+\"TR\"]]\), \[Ellipsis].\n\!\(\*RowBox[{\"Probability\", \"[\", \
+RowBox[{RowBox[{SubscriptBox[StyleBox[\"pred\", \"TI\"], StyleBox[\"1\", \"TR\
+\"]], \"\[Conditioned]\", SubscriptBox[StyleBox[\"pred\", \"TI\"], \
+StyleBox[\"2\", \"TR\"]]}], \",\", StyleBox[\"\[Ellipsis]\", \"TR\"]}], \
+\"]\"}]\) gives the conditional probability of \
+\!\(\*SubscriptBox[StyleBox[\"pred\", \"TI\"], StyleBox[\"1\", \"TR\"]]\) \
+given \!\(\*SubscriptBox[StyleBox[\"pred\", \"TI\"], StyleBox[\"2\", \"TR\"]]\
+\).", "Documentation" -> <|
+     "Local" -> "paclet:ref/Probability", "Web" -> 
+      "http://reference.wolfram.com/language/ref/Probability.html"|>, 
+    "OwnValues" -> None, "UpValues" -> None, "DownValues" -> None, 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, "Options" -> None, 
+    "Attributes" -> {Protected, ReadProtected}, "FullName" -> 
+    "System`Probability"|>, False]]], "Output",
+ CellChangeTimes->{
+  3.90286401531143*^9, 3.902864435609954*^9, 3.902864792231346*^9, 
+   3.90286585906487*^9, {3.9028659274582033`*^9, 3.9028659421741257`*^9}, 
+   3.902866334217627*^9, 3.902866486360718*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"349d15c4-7206-4e2a-ab29-eba4c028f846"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "Section",
+ CellChangeTimes->{{3.9021660082078543`*^9, 
+  3.902166015354991*^9}},ExpressionUUID->"4542dd6b-7eae-4aa6-9d8d-\
+fd93d0d139fe"],
+
+Cell[TextData[{
+ StyleBox["Ejemplo 1:", "Subsection",
+  FontWeight->"Bold"],
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "Hallar la probabilidad de que al levantar unas pieza de domin\[OAcute], se \
+obtenga un n\[UAcute]mero de puntos mayor que 10 o que sea m\[UAcute]ltiplo \
+de 5.\n\nPaso 1: Hallar la probabilidad \n"
+}], "Text",
+ CellChangeTimes->{{3.902161456289955*^9, 3.9021614629540977`*^9}, {
+   3.902161582023375*^9, 3.902161632037011*^9}, {3.902161664726053*^9, 
+   3.902161674442761*^9}, {3.9021625396888523`*^9, 3.9021625406728487`*^9}, {
+   3.902163213850183*^9, 3.902163234856368*^9}, {3.902166164308599*^9, 
+   3.902166173364973*^9}, 3.902688214097402*^9, 3.902870256096237*^9},
+ FontWeight->"Plain",ExpressionUUID->"35fe757c-4155-40d4-b719-40b6e8c56026"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "+", "y"}], ">", "10"}], "||", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{
+        RowBox[{"x", "+", "y"}], ",", "5"}], "]"}]}], ")"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "\[Distributed]", 
+       RowBox[{"DiscreteUniformDistribution", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "6"}], "}"}], "]"}]}], ",", 
+      RowBox[{"y", "\[Distributed]", 
+       RowBox[{"DiscreteUniformDistribution", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "6"}], "}"}], "]"}]}]}], "}"}]}], "]"}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.902161741604129*^9, 3.902161784184473*^9}, {
+  3.902161889514819*^9, 3.902161972428371*^9}, {3.902162629126895*^9, 
+  3.90216263225239*^9}, {3.902162809040998*^9, 3.902162851637321*^9}, {
+  3.902688179713928*^9, 
+  3.902688180825532*^9}},ExpressionUUID->"2c634dec-eae0-4c2a-a90b-\
+27cc29a169c4"],
+
+Cell["\[DownQuestion]Error? Veamos el espacio muestral!", "Text",
+ CellChangeTimes->{{3.90216324510743*^9, 3.902163260371377*^9}, {
+  3.902870401756048*^9, 
+  3.902870404267935*^9}},ExpressionUUID->"d81a0a0f-9a40-4b85-8f3b-\
+3c063aff3782"],
+
+Cell[BoxData[
+ RowBox[{"Tuples", "[", 
+  RowBox[{
+   RowBox[{"Range", "[", 
+    RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.902163289454578*^9, 3.902163300679027*^9}},
+ CellLabel->
+  "In[248]:=",ExpressionUUID->"6c453701-249b-41cb-8a3c-3bf0a88e8c44"],
+
+Cell["\<\
+
+Hay duplicados! Es necesario poner como restricci\[OAcute]n que {a, b} = {b, \
+a}, \[DownQuestion]C\[OAcute]mo hacemos esto?
+\
+\>", "Text",
+ CellChangeTimes->{{3.902163310975197*^9, 3.902163354108275*^9}, {
+  3.902163443262611*^9, 
+  3.9021634449448013`*^9}},ExpressionUUID->"0f74adeb-d3b6-451b-92c7-\
+c456618f8fd2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DeleteDuplicates", "[", 
+   RowBox[{"Sort", "/@", 
+    RowBox[{"Tuples", "[", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}]}], "]"}], " ", 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.9021629510074043`*^9, 3.902162980883852*^9}, {
+  3.902163038422016*^9, 3.902163048550865*^9}, {3.9021631407097597`*^9, 
+  3.902163197249035*^9}, {3.9021637330700483`*^9, 3.902163741188609*^9}},
+ CellLabel->
+  "In[262]:=",ExpressionUUID->"af5c0e88-f4da-45ee-b6be-fb45b17dfcca"],
+
+Cell["Ahora, calculemos la probabilidad...", "Text",
+ CellChangeTimes->{{3.9021634482477407`*^9, 3.90216345927113*^9}, {
+  3.902164383385624*^9, 
+  3.902164384129675*^9}},ExpressionUUID->"920ce7c0-3dce-48bb-a9e0-\
+45793bec9008"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.902163437392022*^9, 
+  3.902163447694829*^9}},ExpressionUUID->"69700bfe-55dd-4062-9505-\
+0edc28355949"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DeleteDuplicates", "[", 
+   RowBox[{"Sort", "/@", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Tuples", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", 
+         RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "+", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ">", "10"}], " ", "||", 
+        RowBox[{"Divisible", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "+", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", "5"}], "]"}]}], "&"}]}], 
+     "]"}]}], "]"}], "\n"}]], "Input",
+ CellChangeTimes->{{3.9021627168882504`*^9, 3.902162777347062*^9}, {
+  3.902164649586421*^9, 3.9021646631741962`*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"67ed1b9b-bc5c-4965-a0f1-f66a42db5b3f"],
+
+Cell[TextData[StyleBox["\t Forma 1: Funci\[OAcute]n Probability\n",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.902164251328928*^9, 3.9021642584576073`*^9}, 
+   3.902164751732518*^9, 3.902688187962109*^9, {3.902870283378889*^9, 
+   3.902870290952836*^9}, {3.902870342733241*^9, 
+   3.90287034314918*^9}},ExpressionUUID->"e2d73f1b-7b5d-438a-89ea-\
+577749134d15"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "+", "y"}], ">", "10"}], " ", "||", " ", 
+     RowBox[{"Divisible", "[", 
+      RowBox[{
+       RowBox[{"x", "+", "y"}], ",", "5"}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], "\[Distributed]", 
+     RowBox[{"DeleteDuplicates", "[", 
+      RowBox[{"Sort", "/@", 
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}]}], "]"}]}]}], 
+   "]"}], "\n"}]], "Input",
+ CellChangeTimes->{{3.9021640628137712`*^9, 3.902164062816162*^9}, {
+  3.902164215873329*^9, 3.902164246337816*^9}, {3.902164392690962*^9, 
+  3.9021644101535387`*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"0503e4cb-7601-4a56-adbd-444e7b0a45bc"],
+
+Cell[TextData[StyleBox["\t Forma 2: Definir Funci\[OAcute]n Probabilidad\n",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.902164263449518*^9, 3.902164274906049*^9}, {
+   3.902164707032852*^9, 3.902164708833067*^9}, 3.9021647504739857`*^9, 
+   3.9026881896991663`*^9, {3.9028702851929607`*^9, 3.902870295960898*^9}, {
+   3.902870345349382*^9, 
+   3.902870346197404*^9}},ExpressionUUID->"cfccc23c-f5eb-481e-95b6-\
+6c6b4766cf7a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"probability", "[", 
+     RowBox[{"count_", ",", "total_"}], "]"}], ":=", 
+    RowBox[{"count", "/", "total"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"definimos", " ", "la", " ", "funci\[OAcute]n"}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"count1", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"DeleteDuplicates", "[", 
+      RowBox[{"Sort", "/@", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Tuples", "[", 
+          RowBox[{
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "+", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], ">", "10"}], " ", "||", 
+           RowBox[{"Divisible", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "+", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ",", "5"}], "]"}]}], "&"}]}],
+         "]"}]}], "]"}], "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+    "N\[UAcute]mero", " ", "total", " ", "de", " ", "casos", " ", "dada", " ",
+      "la", " ", "restricci\[OAcute]n"}], "*)"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"total1", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"DeleteDuplicates", "[", 
+      RowBox[{"Sort", "/@", 
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}]}], "]"}], " ", 
+     "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"N\[UAcute]mero", " ", "total", " ", "de", " ", "casos"}], " ", 
+    "*)"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"probability", "[", 
+   RowBox[{"count1", ",", "total1"}], "]"}], 
+  RowBox[{"(*", "probabilidad", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.902164277270808*^9, 3.9021643435935497`*^9}, {
+   3.9021644250900507`*^9, 3.90216447612888*^9}, {3.902164575588509*^9, 
+   3.902164619269038*^9}, {3.902164674560623*^9, 3.902164737651894*^9}, {
+   3.902165917935994*^9, 3.902165944898294*^9}, 3.902166207179284*^9},
+ CellLabel->"In[41]:=",ExpressionUUID->"04d9c8f4-1c10-48d4-aa0e-ce21dfb21807"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.902165953658884*^9, 3.902165965007326*^9}},
+ FontWeight->"Plain",ExpressionUUID->"1491ecf9-8381-45e0-8369-ca044d860991"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "Section",
+ CellChangeTimes->{{3.902165988291786*^9, 
+  3.902165989554555*^9}},ExpressionUUID->"fd4860e2-2481-4e11-b7d4-\
+26a949c22bd3"],
+
+Cell[TextData[{
+ StyleBox["Ejemplo 2:", "Subsection",
+  FontWeight->"Bold"],
+ StyleBox["  ",
+  FontWeight->"Bold"],
+ " Hallar la probabilidad de que al levantar unas pieza de domin\[OAcute], se \
+obtenga un n\[UAcute]mero de puntos mayor que 5 y que sea m\[UAcute]ltiplo de \
+2.\n\n\t",
+ StyleBox["Forma 1",
+  FontWeight->"Bold"],
+ ": Funci\[OAcute]n ",
+ StyleBox["Probability",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.902165997826528*^9, 3.9021660024751377`*^9}, {
+  3.902166046876498*^9, 3.902166096890772*^9}, {3.9021661290112133`*^9, 
+  3.902166142990321*^9}, {3.902166175215958*^9, 3.9021661874685287`*^9}, {
+  3.902166221749558*^9, 3.9021662276864634`*^9}, {3.902166543643676*^9, 
+  3.9021665449470987`*^9}, {3.902688221881917*^9, 3.902688222361588*^9}, {
+  3.902870314275882*^9, 
+  3.90287033979889*^9}},ExpressionUUID->"85c63c74-ef15-4bf7-9147-\
+e53ba62c3395"],
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "y"}], ">", "5"}], " ", "&&", " ", 
+    RowBox[{"Divisible", "[", 
+     RowBox[{
+      RowBox[{"x", "+", "y"}], ",", "2"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], "\[Distributed]", 
+    RowBox[{"DeleteDuplicates", "[", 
+     RowBox[{"Sort", "/@", 
+      RowBox[{"Tuples", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", 
+         RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}]}], "]"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.902165994627528*^9, 3.902166004290832*^9}, {
+  3.902166212377489*^9, 3.9021662582734423`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"d4f09291-1dc9-4133-b36d-8f4349618997"],
+
+Cell[TextData[{
+ StyleBox["\n\tForma 2 :",
+  FontWeight->"Bold"],
+ " Definir Funci\[OAcute]n Probabilidad"
+}], "Text",
+ CellChangeTimes->{{3.9021662656406927`*^9, 3.9021662758800917`*^9}, 
+   3.90216652047327*^9, {3.902870318634136*^9, 
+   3.9028703358439198`*^9}},ExpressionUUID->"f4053adb-05a2-4e77-81b5-\
+46f1298c7ecf"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"count2", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"DeleteDuplicates", "[", 
+      RowBox[{"Sort", "/@", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Tuples", "[", 
+          RowBox[{
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "+", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], ">", "5"}], " ", "&&", " ", 
+           RowBox[{"Divisible", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "+", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], ",", "2"}], "]"}]}], "&"}]}],
+         "]"}]}], "]"}], "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+    "N\[UAcute]mero", " ", "total", " ", "de", " ", "casos", " ", "dada", " ",
+      "la", " ", "restricci\[OAcute]n"}], "*)"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"total2", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"DeleteDuplicates", "[", 
+      RowBox[{"Sort", "/@", 
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "6"}], "]"}], ",", "2"}], "]"}]}], "]"}], " ", 
+     "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"N\[UAcute]mero", " ", "total", " ", "de", " ", "casos"}], " ", 
+    "*)"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"probability", "[", 
+   RowBox[{"count2", ",", "total2"}], "]"}], 
+  RowBox[{"(*", "probabilidad", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.90216628245653*^9, 3.9021663101859426`*^9}, 
+   3.902166387826963*^9, {3.9021664906101303`*^9, 3.902166492656733*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"8fa954f9-db3e-45f2-bedd-1c77c12c722e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "Section",ExpressionUUID->"6704eb00-dbf2-4fb0-9548-101cd8584e16"],
+
+Cell[TextData[{
+ StyleBox["Ejemplo 3:", "Subsection",
+  FontWeight->"Bold"],
+ "  Si se lanzan un dados al aire tres veces, \[DownQuestion]cu\[AAcute]l es \
+la probabilidad de obtener un m\[UAcute]ltiplo de 2 en el primer lanzamiento, \
+un m\[UAcute]ltiplo de 3 en el segundo y un m\[UAcute]ltiplo de 5 en el \
+tercero?\n\n\t",
+ StyleBox["Forma 1:  ",
+  FontWeight->"Bold"],
+ "Funci\[OAcute]n ",
+ StyleBox["Probability",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.902166631820944*^9, 3.9021666802776423`*^9}, {
+  3.902180096642353*^9, 3.902180102847053*^9}, {3.902180961993478*^9, 
+  3.90218096212111*^9}, {3.902688226516531*^9, 
+  3.902688232601632*^9}},ExpressionUUID->"c67d8a95-4db3-48ee-a8d3-\
+edde37c330d9"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Probability", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Divisible", "[", 
+       RowBox[{"x", ",", "2"}], "]"}], " ", "&&", " ", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{"y", ",", "3"}], "]"}], "&&", " ", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{"z", ",", "5"}], "]"}]}], " ", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "\[Distributed]", 
+        RowBox[{"DiscreteUniformDistribution", "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "6"}], "}"}], "]"}]}], ",", 
+       RowBox[{"y", "\[Distributed]", 
+        RowBox[{"DiscreteUniformDistribution", "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "6"}], "}"}], "]"}]}], ",", 
+       RowBox[{"z", " ", "\[Distributed]", " ", 
+        RowBox[{"DiscreteUniformDistribution", "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "6"}], "}"}], "]"}]}]}], "}"}]}], "    ", "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.902166836854136*^9, 3.90216687680807*^9}, 
+   3.9021677623950167`*^9, {3.9021793913894033`*^9, 3.902179392181838*^9}, {
+   3.902179757892734*^9, 3.9021798247981567`*^9}, {3.902179857479433*^9, 
+   3.902179858485437*^9}, {3.9021799124222183`*^9, 3.902179924805902*^9}, 
+   3.902180531043536*^9, 
+   3.9021808778557053`*^9},ExpressionUUID->"f9b7a794-6e74-4813-bb42-\
+af1b29489f39"],
+
+Cell[TextData[{
+ StyleBox["\n\tForma 2 :",
+  FontWeight->"Bold"],
+ " Definir Funci\[OAcute]n Probabilidad"
+}], "Text",
+ CellChangeTimes->{{3.902180114666729*^9, 3.90218011842286*^9}, 
+   3.902180881112814*^9, {3.902688234609571*^9, 
+   3.90268823556971*^9}},ExpressionUUID->"4c21dd33-5b41-44fa-8366-\
+1716bf1e663c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"count3", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"1", ",", "6"}], "]"}], ",", "3"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Divisible", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], "&&", " ", 
+         RowBox[{"Divisible", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", "3"}], "]"}], "&&", 
+         RowBox[{"Divisible", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "3", "]"}], "]"}], ",", "5"}], "]"}]}], " ", "&"}]}],
+       "]"}], "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+    "N\[UAcute]mero", " ", "total", " ", "de", " ", "casos", " ", "dada", " ",
+      "la", " ", "restricci\[OAcute]n"}], "*)"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"total3", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"Tuples", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"1", ",", "6"}], "]"}], ",", "3"}], "]"}], "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"N\[UAcute]mero", " ", "total", " ", "de", " ", "casos"}], " ", 
+    "*)"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"probability", "[", 
+  RowBox[{"count3", ",", "total3"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.902180156070464*^9, 3.902180163142212*^9}, {
+  3.90218057647397*^9, 3.902180653497736*^9}, {3.902180771878707*^9, 
+  3.90218079714065*^9}},
+ CellLabel->
+  "In[481]:=",ExpressionUUID->"57d78b78-2db0-4973-906a-fa9af34e8e78"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "Section",ExpressionUUID->"b5735129-3183-4ddb-8536-6d1969ff7fa1"],
+
+Cell[TextData[{
+ StyleBox["Ejemplo 4:", "Subsection",
+  FontWeight->"Bold"],
+ "  Supongamos que lanzamos 5 monedas 20 veces, contemos el n\[UAcute]mero de \
+casos que salga .\n\nVeamos para 3 monedas todos los casos..."
+}], "Text",
+ CellChangeTimes->{{3.902166631820944*^9, 3.9021666802776423`*^9}, {
+  3.9021687551032867`*^9, 3.902168789458494*^9}, {3.902176689421221*^9, 
+  3.902176692029441*^9}, {3.902181123859478*^9, 3.9021811239778137`*^9}, {
+  3.9026882402895803`*^9, 3.902688241033811*^9}, {3.902870799668021*^9, 
+  3.90287081065156*^9}},ExpressionUUID->"a90aed81-1870-41ad-9c60-\
+07bcf4c45ff7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Tuples", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<C\>\"", ",", "\"\<S\>\""}], "}"}], ",", "3"}], "]"}], 
+      ",", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Count", "[", 
+          RowBox[{"#", ",", "\"\<C\>\""}], "]"}], "&"}], ",", 
+        RowBox[{"Tuples", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\"\<C\>\"", ",", "\"\<S\>\""}], "}"}], ",", "3"}], 
+         "]"}]}], "]"}], ",", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Count", "[", 
+            RowBox[{"#", ",", "\"\<C\>\""}], "]"}], "/", "3"}], "&"}], ",", 
+         RowBox[{"Tuples", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<C\>\"", ",", "\"\<S\>\""}], "}"}], ",", "3"}], 
+          "]"}]}], "]"}], "//", "N"}]}], "}"}], "//", "Transpose"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9021771881614237`*^9, 3.902177326376872*^9}, {
+  3.902177363409966*^9, 3.902177364108778*^9}, {3.9021777026139174`*^9, 
+  3.902177719136251*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"5b7a6fba-e236-4f25-a4fe-3533db2c3529"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"C\"\>", ",", "\<\"C\"\>", ",", "\<\"C\"\>"}], "}"}], "3", 
+     "1.`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"C\"\>", ",", "\<\"C\"\>", ",", "\<\"S\"\>"}], "}"}], "2", 
+     "0.6666666666666666`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"C\"\>", ",", "\<\"S\"\>", ",", "\<\"C\"\>"}], "}"}], "2", 
+     "0.6666666666666666`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"C\"\>", ",", "\<\"S\"\>", ",", "\<\"S\"\>"}], "}"}], "1", 
+     "0.3333333333333333`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"S\"\>", ",", "\<\"C\"\>", ",", "\<\"C\"\>"}], "}"}], "2", 
+     "0.6666666666666666`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"S\"\>", ",", "\<\"C\"\>", ",", "\<\"S\"\>"}], "}"}], "1", 
+     "0.3333333333333333`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"S\"\>", ",", "\<\"S\"\>", ",", "\<\"C\"\>"}], "}"}], "1", 
+     "0.3333333333333333`"},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"S\"\>", ",", "\<\"S\"\>", ",", "\<\"S\"\>"}], "}"}], "0", 
+     "0.`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.902870765066641*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"a9cc9ecb-0ce0-408d-880b-8168c6b934c5"]
+}, Open  ]],
+
+Cell["\<\
+Ahora, para 5 monedas, veamos como es la probabilidad de que salga cara al \
+lanzarlas 20 veces.\
+\>", "Text",
+ CellChangeTimes->{{3.90217868776294*^9, 3.902178730427841*^9}, {
+  3.902178763819261*^9, 
+  3.902178801388159*^9}},ExpressionUUID->"bd4af69d-f85b-431c-ab33-\
+613aa998e353"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"nromonedas", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lanzamiento", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"RandomChoice", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<C\>\"", ",", "\"\<S\>\""}], "}"}], ",", "nromonedas"}], 
+      "]"}], ",", "20"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nrodecaras", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Count", "[", 
+       RowBox[{"#", ",", "\"\<C\>\""}], "]"}], "&"}], ",", "lanzamiento"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"probab", "=", 
+   RowBox[{
+    RowBox[{"nrodecaras", "/", "nromonedas"}], "//", "N"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lanzamiento", ",", "nrodecaras", ",", "probab"}], "}"}], "//", 
+    "Transpose"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.9021777477080936`*^9, 3.9021778385965347`*^9}, {
+  3.902177872616102*^9, 3.90217813978826*^9}, {3.902178316322452*^9, 
+  3.902178389132132*^9}, {3.902178679090929*^9, 3.902178682396647*^9}, {
+  3.9021787774526043`*^9, 3.902178794476431*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"3c4c8680-7a57-4fc8-b129-9e63512726e3"],
+
+Cell[TextData[{
+ "Notemos que podemos analizar ",
+ StyleBox["a qu\[EAcute] valor converge ",
+  FontWeight->"Bold"],
+ "la probabilidad de obtener \[OpenCurlyDoubleQuote]Cara\
+\[CloseCurlyDoubleQuote] a medida que aumentamos el n\[UAcute]mero de \
+lanzamientos. Consideremos el n\[UAcute]mero de lanzamientos como \
+\[OpenCurlyDoubleQuote]n\[CloseCurlyDoubleQuote]. Como bien sabemos, para una \
+moneda tanto \[OpenCurlyDoubleQuote]Sello\[CloseCurlyDoubleQuote] como \
+\[OpenCurlyDoubleQuote]Cara\[CloseCurlyDoubleQuote] tienen la misma \
+probabilidad de aparecer, por lo que cada lado de la moneda tiene un 0,5 de \
+probabilidad de salir, por lo que al lanzar la moneda muchas veces, la \
+proporci\[OAcute]n de veces que sale \[OpenCurlyDoubleQuote]Cara\
+\[CloseCurlyDoubleQuote] ",
+ StyleBox["deber\[IAcute]a converger a 0,5. ",
+  FontWeight->"Bold"],
+ "Revisemos esto.\n"
+}], "Text",
+ CellChangeTimes->{{3.9021788107810593`*^9, 3.902178822668714*^9}, {
+  3.902178883982189*^9, 3.9021789389204187`*^9}, {3.9021789692641983`*^9, 
+  3.9021791603867617`*^9}},ExpressionUUID->"b5799bfc-221b-4b5c-8389-\
+91ea300bf60b"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Count", "[", 
+       RowBox[{
+        RowBox[{"RandomChoice", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\"\<C\>\"", ",", "\"\<S\>\""}], "}"}], ",", "n"}], "]"}], 
+        ",", "\"\<C\>\""}], "]"}], "/", "n"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "1000"}], "}"}]}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9021791643643637`*^9, 3.902179186213985*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"fdc84db4-351d-4690-8ee0-8d790e18c2b1"],
+
+Cell["\<\
+Como podemos ver en el gr\[AAcute]fico,  a medida que aumentas el \
+n\[UAcute]mero de lanzamientos en el c\[OAcute]digo ({n, 1, 1000}), la \
+proporci\[OAcute]n de caras en la muestra tiende a acercarse a 0.5, lo que \
+refleja la probabilidad te\[OAcute]rica de la moneda.\
+\>", "Text",
+ CellChangeTimes->{{3.9021791180492992`*^9, 
+  3.902179147593946*^9}},ExpressionUUID->"c87e9428-9c19-44e2-b6b2-\
+c2fcd2bc0276"],
+
+Cell[TextData[{
+ StyleBox["Ejemplo 5:", "Subsection",
+  FontWeight->"Bold"],
+ "  Se tiene una caja con 5 bolitas rojas y 10 negras.\n\na) Si al sacar una \
+bolita, \[EAcute]sta no se vuelve a reponer, calcular la probabilidad de \
+sacar dos bolitas rojas.\n\nDefinimos,\n\nA = Probabilidad de que la primera \
+bolita sea roja\n\nB = Probabilidad de que la segunda bolita sea roja\n\n\t",
+ StyleBox["Forma 1: Probabilidad",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.902166631820944*^9, 3.9021666802776423`*^9}, {
+   3.9021687551032867`*^9, 3.902168789458494*^9}, {3.902176689421221*^9, 
+   3.902176692029441*^9}, {3.902181123859478*^9, 3.9021811239778137`*^9}, {
+   3.902181158931699*^9, 3.902181190060874*^9}, 3.9021814255158043`*^9, {
+   3.902182697914418*^9, 3.9021827383904457`*^9}, {3.90218277339285*^9, 
+   3.902182834556203*^9}, {3.902183118838516*^9, 3.902183135093696*^9}, {
+   3.9021836387438307`*^9, 3.902183785791772*^9}, {3.902183846875366*^9, 
+   3.902183885103095*^9}, {3.9021840431571083`*^9, 3.902184051101625*^9}, {
+   3.90268824577805*^9, 3.902688246361906*^9}, 
+   3.902870352757655*^9},ExpressionUUID->"b7c9026a-cf9c-40be-b468-\
+935f06ed6fc2"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[" ", "CodeText"], 
+  RowBox[{
+   FractionBox["5", "15"], " ", "*", " ", 
+   FractionBox["4", "14"]}]}]], "Input",
+ CellChangeTimes->{{3.9021838883593388`*^9, 3.902183915340665*^9}, {
+  3.902184058766564*^9, 
+  3.90218407051793*^9}},ExpressionUUID->"f0473407-fcdb-49e7-bbd4-\
+17aa153c204f"],
+
+Cell[TextData[{
+ StyleBox["\tForma 2: Funci\[OAcute]n ",
+  FontWeight->"Bold"],
+ StyleBox["Binomial",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "La funci\[OAcute]n",
+ StyleBox[" Binomial ",
+  FontSlant->"Italic"],
+ "de Wolfram nos entrega el coeficiente binomial  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", GridBox[{
+      {
+       StyleBox["n", "TI"]},
+      {
+       StyleBox["m", "TI"]}
+     }], ")"}], TraditionalForm]], "InlineMath",ExpressionUUID->
+  "163b9773-edf3-4b54-885c-912b310cb516"],
+ ", es decir, es el n\[UAcute]mero de formas de escoger ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ " elementos de un conjunto de ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " elementos. \n\nSabemos que todas las combinaciones posibles de elegir 2 \
+bolitas rojas de un conjunto de 5 bolitas rojas es,"
+}], "Text",
+ CellChangeTimes->{{3.9021840813420267`*^9, 3.902184267341002*^9}, {
+   3.902184341938184*^9, 3.902184364571824*^9}, 
+   3.9028703536719418`*^9},ExpressionUUID->"8a7345ca-023b-4cae-8248-\
+bb78bef551f7"],
+
+Cell[BoxData[
+ RowBox[{"Binomial", "[", 
+  RowBox[{"5", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.90218436650091*^9, 3.902184369444024*^9}},
+ CellLabel->
+  "In[561]:=",ExpressionUUID->"721989a4-03e5-4e03-baaf-f06c566c0c85"],
+
+Cell["\<\
+Es decir, significa que hay 10 formas diferentes de seleccionar 2 bolitas \
+rojas de las 5 que hay. Y las combinaciones posibles de escoger 2 bolitas de \
+un conjunto de 15 es\
+\>", "Text",
+ CellChangeTimes->{{3.902183978334622*^9, 3.902184004112883*^9}, 
+   3.902184074623049*^9, 3.902184230991399*^9, {3.902184378262443*^9, 
+   3.9021844106375647`*^9}, {3.9021847837092867`*^9, 3.902184807685102*^9}, {
+   3.902184848090787*^9, 3.90218493028052*^9}, 
+   3.9027062956473494`*^9},ExpressionUUID->"e56ed7d2-90ff-4287-9c85-\
+e2bfa3a024f4"],
+
+Cell[BoxData[
+ RowBox[{"Binomial", "[", 
+  RowBox[{"15", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.902184418326022*^9, 3.902184419886256*^9}, 
+   3.902184939071594*^9},ExpressionUUID->"b4954a84-31ea-4e2b-91be-\
+85fcb8cd9a72"],
+
+Cell["Por lo que la probabilidad de obtener 2 bolitas", "Text",
+ CellChangeTimes->{{3.90218494950255*^9, 
+  3.902184957406939*^9}},ExpressionUUID->"dccbf9d2-f626-47f9-8305-\
+55d5acd67eda"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Binomial", "[", 
+   RowBox[{"5", ",", "2"}], "]"}], "/", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"15", ",", "2"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9021849638155317`*^9, 3.902184966615377*^9}},
+ CellLabel->
+  "In[562]:=",ExpressionUUID->"b19d53b1-0c3b-4f3d-b982-a90d291d202b"]
+}, Open  ]],
+
+Cell["", "Section",
+ CellChangeTimes->{{3.9021660082078543`*^9, 
+  3.902166015354991*^9}},ExpressionUUID->"8bcf1b3f-3cc0-4b6d-93bc-\
+cac810f19715"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Repartido de Ejercicios Nro 1", "Chapter",
+ CellChangeTimes->{{3.902687628487217*^9, 3.9026876922330313`*^9}, 
+   3.902688252594948*^9, 
+   3.9026883196434183`*^9},ExpressionUUID->"30383c65-1066-43e4-9c2c-\
+10ba07565d9f"],
+
+Cell["\<\
+1. Se lanzan dos dados al aire. Hallar la probabilidad de que los \
+n\[UAcute]meros obtenidos sumen 9.
+\
+\>", "Text",
+ CellChangeTimes->{{3.9026877402851152`*^9, 
+  3.902687755627281*^9}},ExpressionUUID->"c6c66b41-7858-45a7-881f-\
+e7fa0017a4b9"],
+
+Cell["\<\
+3.  Un profesor mand\[OAcute] a estudiar las unidades 3 y 4 a los 25 alumnos \
+de una clase. De ellos, 17 alumnos estudiaron la unidad tres, 14 la unidad \
+cuatro, 4 no estudiaron ninguna.
+
+\t(a) \[DownQuestion]Cu\[AAcute]l es la probabilidad de que al llamar a un \
+alumno a la pizarra \[EAcute]ste haya estudiado ambas unidades?
+\t
+\t(b) \[DownQuestion]Cu\[AAcute]l es la probabilidad de que haya estudiado \
+solamente una unidad?\
+\>", "Text",
+ CellChangeTimes->{{3.902687759196747*^9, 3.902687825106821*^9}, {
+   3.9026881469088*^9, 3.902688153591638*^9}, 
+   3.902870987062904*^9},ExpressionUUID->"33062cb4-9c12-4eb6-9ed5-\
+6535ef7d5dd5"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.902687774204742*^9, 
+  3.902687781659233*^9}},ExpressionUUID->"28246e73-8640-4b0f-b8dd-\
+7355e22d6792"],
+
+Cell["\<\
+5. En una caja hay 14 relojes de los cuales 4 est\[AAcute]n fallados. Sacamos \
+dos relojes al azar.
+(a) \[DownQuestion]Cu\[AAcute]l es la probabilidad de que ambos esten fallados?
+(b) \[DownQuestion]y de sacar uno fallado y uno sano?\
+\>", "Text",
+ CellChangeTimes->{{3.9026878313218317`*^9, 
+  3.902687862667809*^9}},ExpressionUUID->"8cd830c2-5301-4879-b6ab-\
+a831263b50c4"],
+
+Cell[TextData[{
+ "7. Tres tiradores A, B y C disparan contra un blanco. Las probabilidades de \
+acertar son: ",
+ StyleBox["p(A) = 0,75; p(B) = 0,80; p(C) = 0,90.",
+  FontSlant->"Italic"],
+ "\nHallar la probabilidad de que:\n\n\t(a) Ninguno d\[EAcute] en el blanco.\n\
+\n\t(b) Al menos uno de ellos d\[EAcute] en el blanco.\n\n\t(c) Dos de ellos \
+exactamente den en el blanco."
+}], "Text",
+ CellChangeTimes->{{3.902687852099195*^9, 3.902687879988077*^9}, {
+  3.902688133947483*^9, 
+  3.902688139308523*^9}},ExpressionUUID->"4af72838-2f09-4e2c-a13a-\
+56e9abb5fa50"],
+
+Cell[TextData[{
+ "9.  Un viaje cient\[IAcute]fico a la Ant\[AAcute]rtida se realiza con \
+aviones bimotores o cuadrimotores. Los bimotores pueden volar con un solo \
+motor y los cuadrimotores con dos. La probabilidad de que un motor falle \
+durante la traves \:0301\[DotlessI]a es 5%. \[DownQuestion]Cu\[AAcute]les \
+aviones son m\[AAcute]s seguros? \[DownQuestion]y si la probabilidad de que \
+un motor falle es ",
+ StyleBox["p",
+  FontSlant->"Italic"],
+ "?\n"
+}], "Text",
+ CellChangeTimes->{{3.902688015711796*^9, 
+  3.902688039089623*^9}},ExpressionUUID->"3d4d6c7c-8f18-48cd-b492-\
+f1a324b4b25b"],
+
+Cell[TextData[{
+ StyleBox["11. Un meteor\[OAcute]logo anunci\[OAcute] que la probabilidad de \
+que llueva en un d\[IAcute]a cualquiera de Septiembre\nes ",
+  FontSlant->"Plain"],
+ "p = 1/3 ",
+ StyleBox["y es independiente de lo sucedido en d\[IAcute]as anteriores.\n\n\t\
+(a) Calcular la probabilidad de que en la primer semana de setiembre llueva \
+exactamente 5 d\[IAcute]as.\n\n\t(b) Calcular la probabilidad de que llueva 5 \
+o m \:0301as d\[IAcute]as.",
+  FontSlant->"Plain"]
+}], "Text",
+ CellChangeTimes->{{3.902688059111767*^9, 3.90268811069029*^9}},
+ FontSlant->"Italic",ExpressionUUID->"91b2ffb2-a061-44b0-bc4b-f0a5615a73d2"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{331, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3cb6b715-4cf1-41cc-bd84-960cb6ac9097"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 259, 5, 80, "Subtitle",ExpressionUUID->"904b8725-1d5b-4357-bd7c-4815577f4ecc"],
+Cell[CellGroupData[{
+Cell[842, 29, 246, 4, 69, "Chapter",ExpressionUUID->"5a958624-dbdc-49f2-9a84-7b9f33a4a767"],
+Cell[CellGroupData[{
+Cell[1113, 37, 591, 9, 30, "Input",ExpressionUUID->"9038caf3-fbca-4efa-be5d-72bb37a3b329"],
+Cell[1707, 48, 22465, 437, 192, "Output",ExpressionUUID->"349d15c4-7206-4e2a-ab29-eba4c028f846"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24209, 490, 147, 3, 67, "Section",ExpressionUUID->"4542dd6b-7eae-4aa6-9d8d-fd93d0d139fe"],
+Cell[24359, 495, 766, 14, 110, "Text",ExpressionUUID->"35fe757c-4155-40d4-b719-40b6e8c56026"],
+Cell[25128, 511, 1000, 27, 52, "Input",ExpressionUUID->"2c634dec-eae0-4c2a-a90b-27cc29a169c4"],
+Cell[26131, 540, 239, 4, 35, "Text",ExpressionUUID->"d81a0a0f-9a40-4b85-8f3b-3c063aff3782"],
+Cell[26373, 546, 289, 7, 30, "Input",ExpressionUUID->"6c453701-249b-41cb-8a3c-3bf0a88e8c44"],
+Cell[26665, 555, 327, 9, 81, "Text",ExpressionUUID->"0f74adeb-d3b6-451b-92c7-c456618f8fd2"],
+Cell[26995, 566, 548, 13, 52, "Input",ExpressionUUID->"af5c0e88-f4da-45ee-b6be-fb45b17dfcca"],
+Cell[27546, 581, 228, 4, 35, "Text",ExpressionUUID->"920ce7c0-3dce-48bb-a9e0-45793bec9008"],
+Cell[27777, 587, 152, 3, 30, "Input",ExpressionUUID->"69700bfe-55dd-4062-9505-0edc28355949"],
+Cell[27932, 592, 1009, 28, 52, "Input",ExpressionUUID->"67ed1b9b-bc5c-4965-a0f1-f66a42db5b3f"],
+Cell[28944, 622, 370, 6, 58, "Text",ExpressionUUID->"e2d73f1b-7b5d-438a-89ea-577749134d15"],
+Cell[29317, 630, 847, 23, 52, "Input",ExpressionUUID->"0503e4cb-7601-4a56-adbd-444e7b0a45bc"],
+Cell[30167, 655, 434, 7, 58, "Text",ExpressionUUID->"cfccc23c-f5eb-481e-95b6-6c6b4766cf7a"],
+Cell[30604, 664, 2465, 65, 199, "Input",ExpressionUUID->"04d9c8f4-1c10-48d4-aa0e-ce21dfb21807"],
+Cell[33072, 731, 169, 2, 30, "Input",ExpressionUUID->"1491ecf9-8381-45e0-8369-ca044d860991"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33278, 738, 145, 3, 67, "Section",ExpressionUUID->"fd4860e2-2481-4e11-b7d4-26a949c22bd3"],
+Cell[33426, 743, 885, 21, 87, "Text",ExpressionUUID->"85c63c74-ef15-4bf7-9147-e53ba62c3395"],
+Cell[34314, 766, 759, 21, 30, "Input",ExpressionUUID->"d4f09291-1dc9-4133-b36d-8f4349618997"],
+Cell[35076, 789, 322, 8, 58, "Text",ExpressionUUID->"f4053adb-05a2-4e77-81b5-46f1298c7ecf"],
+Cell[35401, 799, 2013, 54, 157, "Input",ExpressionUUID->"8fa954f9-db3e-45f2-bedd-1c77c12c722e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37451, 858, 74, 0, 67, "Section",ExpressionUUID->"6704eb00-dbf2-4fb0-9548-101cd8584e16"],
+Cell[37528, 860, 725, 17, 110, "Text",ExpressionUUID->"c67d8a95-4db3-48ee-a8d3-edde37c330d9"],
+Cell[38256, 879, 1397, 33, 94, "Input",ExpressionUUID->"f9b7a794-6e74-4813-bb42-af1b29489f39"],
+Cell[39656, 914, 315, 8, 58, "Text",ExpressionUUID->"4c21dd33-5b41-44fa-8366-1716bf1e663c"],
+Cell[39974, 924, 1758, 48, 136, "Input",ExpressionUUID->"57d78b78-2db0-4973-906a-fa9af34e8e78"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41769, 977, 74, 0, 67, "Section",ExpressionUUID->"b5735129-3183-4ddb-8536-6d1969ff7fa1"],
+Cell[41846, 979, 603, 11, 87, "Text",ExpressionUUID->"a90aed81-1870-41ad-9c60-07bcf4c45ff7"],
+Cell[CellGroupData[{
+Cell[42474, 994, 1319, 37, 30, "Input",ExpressionUUID->"5b7a6fba-e236-4f25-a4fe-3533db2c3529"],
+Cell[43796, 1033, 1363, 40, 173, "Output",ExpressionUUID->"a9cc9ecb-0ce0-408d-880b-8168c6b934c5"]
+}, Open  ]],
+Cell[45174, 1076, 294, 7, 35, "Text",ExpressionUUID->"bd4af69d-f85b-431c-ab33-613aa998e353"],
+Cell[45471, 1085, 1367, 37, 136, "Input",ExpressionUUID->"3c4c8680-7a57-4fc8-b129-9e63512726e3"],
+Cell[46841, 1124, 1113, 21, 104, "Text",ExpressionUUID->"b5799bfc-221b-4b5c-8389-91ea300bf60b"],
+Cell[47957, 1147, 654, 17, 30, "Input",ExpressionUUID->"fdc84db4-351d-4690-8ee0-8d790e18c2b1"],
+Cell[48614, 1166, 423, 8, 58, "Text",ExpressionUUID->"c87e9428-9c19-44e2-b6b2-c2fcd2bc0276"],
+Cell[49040, 1176, 1177, 20, 271, "Text",ExpressionUUID->"b7c9026a-cf9c-40be-b468-935f06ed6fc2"],
+Cell[50220, 1198, 324, 9, 48, "Input",ExpressionUUID->"f0473407-fcdb-49e7-bbd4-17aa153c204f"],
+Cell[50547, 1209, 1062, 33, 143, "Text",ExpressionUUID->"8a7345ca-023b-4cae-8248-bb78bef551f7"],
+Cell[51612, 1244, 232, 5, 30, "Input",ExpressionUUID->"721989a4-03e5-4e03-baaf-f06c566c0c85"],
+Cell[51847, 1251, 547, 10, 35, "Text",ExpressionUUID->"e56ed7d2-90ff-4287-9c85-e2bfa3a024f4"],
+Cell[52397, 1263, 234, 5, 30, "Input",ExpressionUUID->"b4954a84-31ea-4e2b-91be-85fcb8cd9a72"],
+Cell[52634, 1270, 188, 3, 35, "Text",ExpressionUUID->"dccbf9d2-f626-47f9-8305-55d5acd67eda"],
+Cell[52825, 1275, 319, 8, 30, "Input",ExpressionUUID->"b19d53b1-0c3b-4f3d-b982-a90d291d202b"]
+}, Open  ]],
+Cell[53159, 1286, 147, 3, 67, "Section",ExpressionUUID->"8bcf1b3f-3cc0-4b6d-93bc-cac810f19715"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53343, 1294, 227, 4, 69, "Chapter",ExpressionUUID->"30383c65-1066-43e4-9c2c-10ba07565d9f"],
+Cell[53573, 1300, 255, 7, 58, "Text",ExpressionUUID->"c6c66b41-7858-45a7-881f-e7fa0017a4b9"],
+Cell[53831, 1309, 653, 14, 127, "Text",ExpressionUUID->"33062cb4-9c12-4eb6-9ed5-6535ef7d5dd5"],
+Cell[54487, 1325, 152, 3, 30, "Input",ExpressionUUID->"28246e73-8640-4b0f-b8dd-7355e22d6792"],
+Cell[54642, 1330, 386, 8, 81, "Text",ExpressionUUID->"8cd830c2-5301-4879-b6ab-a831263b50c4"],
+Cell[55031, 1340, 564, 12, 196, "Text",ExpressionUUID->"4af72838-2f09-4e2c-a13a-56e9abb5fa50"],
+Cell[55598, 1354, 599, 13, 81, "Text",ExpressionUUID->"3d4d6c7c-8f18-48cd-b492-f1a324b4b25b"],
+Cell[56200, 1369, 634, 12, 150, "Text",ExpressionUUID->"91b2ffb2-a061-44b0-bc4b-f0a5615a73d2"]
+}, Open  ]]
+}
+]
+*)
+

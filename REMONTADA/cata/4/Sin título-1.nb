@@ -1,0 +1,75 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2048,         65]
+NotebookOptionsPosition[      1455,         47]
+NotebookOutlinePosition[      1878,         63]
+CellTagsIndexPosition[      1835,         60]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"aux", "=", 
+  RowBox[{
+  "Import", "[", "\"\<astrostatistics.psu.edu_MSMA_datasets_SDSS_QSO.dat\>\"",
+    "]"}]}]], "Input",
+ CellLabel->"In[20]:=",ExpressionUUID->"b789bfbd-ab3f-43a5-a987-d10d470b93d1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "nffil", 
+   "\"File \\!\\(\\*RowBox[{\\\"\\\\\\\"astrostatistics.psu.edu_MSMA_datasets_\
+SDSS_QSO.dat\\\\\\\"\\\"}]\\) not found during \
+\\!\\(\\*RowBox[{\\\"Import\\\"}]\\).\"", 2, 20, 2, 31168727644908119318, 
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9405532894108963`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[20]:=",ExpressionUUID->"bbd09fd5-efc1-4ff7-8820-4ff44e6a7153"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.9405532894535007`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"2fa4fdaf-d481-4aa6-98a8-e40eaa0de1ec"]
+}, Open  ]]
+},
+WindowSize->{574.8, 573.6},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+FrontEndVersion->"13.0 para Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3b958c25-1163-4e05-a077-7e884745de15"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 227, 5, 62, "Input",ExpressionUUID->"b789bfbd-ab3f-43a5-a987-d10d470b93d1"],
+Cell[810, 29, 469, 11, 28, "Message",ExpressionUUID->"bbd09fd5-efc1-4ff7-8820-4ff44e6a7153"],
+Cell[1282, 42, 157, 2, 55, "Output",ExpressionUUID->"2fa4fdaf-d481-4aa6-98a8-e40eaa0de1ec"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

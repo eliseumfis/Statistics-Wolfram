@@ -1,0 +1,440 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18922,        432]
+NotebookOptionsPosition[     17861,        404]
+NotebookOutlinePosition[     18255,        420]
+CellTagsIndexPosition[     18212,        417]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Introducci\[OAcute]n a Estad\[IAcute]stica usando Wolfram Mathematica", \
+"Section",
+ CellChangeTimes->{{3.906132860095985*^9, 3.906132881184304*^9}, {
+  3.90613302944048*^9, 
+  3.906133043447624*^9}},ExpressionUUID->"74b205bf-fa2b-4e56-ac7e-\
+c68db38090f0"],
+
+Cell[CellGroupData[{
+
+Cell["Algunas Funciones Importantes!", "Subsection",
+ CellChangeTimes->{{3.9061338089445868`*^9, 
+  3.9061338226032743`*^9}},ExpressionUUID->"1b9998b3-b5cb-45b6-8136-\
+c5acc969c596"],
+
+Cell[TextData[{
+ StyleBox["RandomReal: ",
+  FontWeight->"Bold"],
+ "Se utiliza para generar n\[UAcute]meros aleatorios con punto flotante (n\
+\[UAcute]meros reales) en un rango especificado. Podemos especificar el ",
+ StyleBox["rango",
+  FontSlant->"Italic"],
+ " y la cantidad de n\[UAcute]meros reales que queremos que nos entregue. \
+Otras funciones similares a \[EAcute]sta son:\n\n\t\[Checkmark] \
+RandomInteger: Entrega un n\[UAcute]mero entero aleatorio \n\t\[Checkmark] \
+RandomComplex: Entrega un n\[UAcute]mero complejo aleatorio\n\t\[Checkmark] \
+RandomChoice: Escoge una variable aleatoria de una lista entregada\n\t\
+\[Checkmark] RandomVariate: Toma una distribuci\[OAcute]n como argumento y \
+produce valores aleatorios que siguen esa distribuci\[OAcute]n. \n\t\t\t\t\t\t\
+\:205d\n\t\t\t\t\t\tetc",
+ StyleBox["\nSeedRandom: ",
+  FontWeight->"Bold"],
+ "Es como una especie de \
+\[OpenCurlyDoubleQuote]inicio\[CloseCurlyDoubleQuote] para el generador de n\
+\[UAcute]meros aleatorios en Mathematica. Cuando utilizamos`SeedRandom`, le \
+damos al generador de n\[UAcute]meros aleatorios un ",
+ StyleBox["n\[UAcute]mero inicial,",
+  FontSlant->"Italic"],
+ " llamado \[OpenCurlyDoubleQuote]semilla\[CloseCurlyDoubleQuote]. Este n\
+\[UAcute]mero inicial es como un punto de partida para generar \
+n\[UAcute]meros aleatorios.\n\nLa idea importante aqu\[IAcute] es que si \
+utilizamos la misma semilla, obtendremos los mismos n\[UAcute]meros \
+aleatorios cada vez que ejecutes nuestro programa. Esta funci\[OAcute]n nos \
+permite hacer que que nuestros resultados aleatorios sean predecibles. \
+Notemos que la diferencia entre diferentes semillas en la funci\[OAcute]n \
+SeedRandom es que cada semilla genera una secuencia diferente de \
+n\[UAcute]meros aleatorios. En otras palabras, cambiar la semilla cambiar\
+\[AAcute] la secuencia de n\[UAcute]meros aleatorios generados, por ejemplo, \
+SeedRandom[123], SeedRandom[12] y SeedRandom[245] generan tres secuencias \
+diferentes de n\[UAcute]meros aleatorios. ",
+ StyleBox["\n\nAbsoluteTime: ",
+  FontWeight->"Bold"],
+ "Devuelve un n\[UAcute]mero que representa la marca de tiempo en segundos \
+desde la \[OpenCurlyDoubleQuote]\[CapitalEAcute]poca\[CloseCurlyDoubleQuote] \
+(que es un momento de referencia en el tiempo, a menudo el 1 de enero de 1900 \
+o el 1 de enero de 1970, dependiendo del sistema) .\n\n",
+ StyleBox["Histogram: ",
+  FontWeight->"Bold"],
+ "Funci\[OAcute]n utilizada para crear gr\[AAcute]ficos de histogramas a \
+partir de una lista de datos, es decir, crea una representaci\[OAcute]n gr\
+\[AAcute]fica de la distribuci\[OAcute]n de frecuencia de los datos.",
+ StyleBox["\n\nSmoothHistogram: ",
+  FontWeight->"Bold"],
+ "Se utiliza para crear un histograma",
+ StyleBox[" suavizado ",
+  FontSlant->"Italic"],
+ "que muestra una estimaci\[OAcute]n de la densidad de probabilidad de los \
+datos. A diferencia de un histograma convencional, que utiliza barras, el \
+histograma suavizado utiliza una curva suave para representar la ",
+ StyleBox["distribuci\[OAcute]n",
+  FontSlant->"Italic"],
+ " de los datos.\n",
+ StyleBox["\nPlot: ",
+  FontWeight->"Bold"],
+ "Se utiliza para crear gr\[AAcute]ficos de funciones matem\[AAcute]ticas o \
+representaciones de datos en general. Podemos utilizar esta funci\[OAcute]n \
+para visualizar funciones matem\[AAcute]ticas, relaciones, curvas de datos, \
+etc. Otras funciones similares a \[EAcute]sta son:\n\n\t\[Checkmark] ListPlot \
+& ListLinePlot: Se utiliza para crear gr\[AAcute]ficos de dispersi\[OAcute]n \
+a partir de listas de datos. Muestra puntos en un plano cartesiano donde el \
+eje x representa una variable y el eje y representa otra. Es ideal para \
+visualizar relaciones entre dos conjuntos de datos.\n\t\n\t\[Checkmark] \
+ContourPlot: Se utiliza para crear gr\[AAcute]ficos de contorno que \
+representan superficies tridimensionales en un plano bidimensional. Es \
+\[UAcute]til para visualizar curvas de nivel de funciones bidimensionales.\n\t\
+\n\t\[Checkmark] DensityPlot: Se utiliza para visualizar la densidad de una \
+funci\[OAcute]n bidimensional. Crea un mapa de colores donde los colores \
+representan los valores de la funci\[OAcute]n en diferentes partes del plano.\
+\n\t\n\t\[Checkmark] ArrayPlot: Se utiliza para crear gr\[AAcute]ficos de \
+matrices bidimensionales. Toma una matriz de datos num\[EAcute]ricos y \
+representa cada valor como un cuadro de color en una cuadr\[IAcute]cula \
+bidimensional. Cada color en el gr\[AAcute]fico corresponde al valor de la \
+matriz en esa ubicaci\[OAcute]n. Esto es \[UAcute]til para visualizar \
+patrones en datos matriciales, como mapas de calor, im\[AAcute]genes, datos \
+geoespaciales y m\[AAcute]s.\n\t\n\t\[Checkmark] Show: Se utiliza para \
+combinar gr\[AAcute]ficos o representaciones visuales en una sola figura. \
+Permite superponer, agrupar y personalizar gr\[AAcute]ficos previamente \
+creados, lo que facilita la creaci\[OAcute]n de visualizaciones complejas \
+combinando m\[UAcute]ltiples elementos gr\[AAcute]ficos en un solo output.\n\t\
+\n",
+ StyleBox["PDF: ",
+  FontWeight->"Bold"],
+ "Se utiliza para calcular la ",
+ StyleBox["funci\[OAcute]n de densidad de probabilidad",
+  FontSlant->"Italic"],
+ " (PDF, por sus siglas en ingl\[EAcute]s) de una distribuci\[OAcute]n de \
+probabilidad. B\[AAcute]sicamente describe c\[OAcute]mo se distribuyen las \
+probabilidades de los valores en una variable aleatoria continua o discreta. \
+La sintaxis b\[AAcute]sica es PDF[distribuci\[OAcute]n, valor], donde ",
+ StyleBox["distribuci\[OAcute]n",
+  FontSlant->"Italic"],
+ " es el nombre de la distribuci\[OAcute]n de probabilidad que estamos \
+analizando y",
+ StyleBox[" valor",
+  FontSlant->"Italic"],
+ " es el valor en el que deseaamos evaluar la PDF para la \
+distribuci\[OAcute]n. Es \[UAcute]til para comprender la forma de la \
+distribuci\[OAcute]n de probabilidad y calcular probabilidades asociadas a \
+eventos espec\[IAcute]ficos en la variable aleatoria.",
+ StyleBox["\n\nCDF: ",
+  FontWeight->"Bold"],
+ "Se utiliza para calcular la funci\[OAcute]n de distribuci\[OAcute]n \
+acumulativa (CDF, por sus siglas en ingl\[EAcute]s) de una \
+distribuci\[OAcute]n de probabilidad. La CDF describe c\[OAcute]mo se \
+acumulan las probabilidades de que la variable aleatoria asociada a una \
+distribuci\[OAcute]n tome valores menores o iguales a un valor \
+espec\[IAcute]fico.\n"
+}], "Text",
+ CellChangeTimes->{{3.906133824561138*^9, 3.906133842641694*^9}, {
+   3.906133875274699*^9, 3.906133908912382*^9}, {3.90613395657987*^9, 
+   3.9061340407582197`*^9}, {3.9061340773192244`*^9, 3.906134162563801*^9}, {
+   3.906134207588758*^9, 3.906134213748847*^9}, {3.906134257695427*^9, 
+   3.906134296587245*^9}, {3.90613436207097*^9, 3.906134430936201*^9}, {
+   3.906134502311882*^9, 3.906134572296247*^9}, {3.906134873693717*^9, 
+   3.9061348976887407`*^9}, {3.9061349768912697`*^9, 3.9061349939936*^9}, {
+   3.9061350714038553`*^9, 3.906135119980386*^9}, 3.906135194371719*^9, {
+   3.906135293784683*^9, 3.906135335356144*^9}, {3.906135374763266*^9, 
+   3.9061353812033443`*^9}, {3.906135420153022*^9, 3.906135495787491*^9}, {
+   3.9061355322459583`*^9, 3.906135647479783*^9}, {3.906135677513818*^9, 
+   3.906135719573291*^9}, {3.9061357601830587`*^9, 3.9061358035119257`*^9}, {
+   3.906135834249748*^9, 3.906135875756207*^9}, {3.90615041617848*^9, 
+   3.90615042096274*^9}, {3.906150780655588*^9, 3.906150817895177*^9}, {
+   3.9061525659377537`*^9, 3.9061525724416733`*^9}, {3.906152643555952*^9, 
+   3.906152731650956*^9}, {3.906152772199214*^9, 3.9061527800484*^9}, {
+   3.906152821641539*^9, 
+   3.906152858916337*^9}},ExpressionUUID->"0e49d647-a2fa-4d06-b1ac-\
+f5e788ece9b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Operadores \[CapitalUAcute]tiles:", "Subsection",
+ CellChangeTimes->{{3.906133862489395*^9, 3.9061338638610287`*^9}, {
+   3.906133915045272*^9, 3.906133915805125*^9}, {3.9061342586064653`*^9, 
+   3.906134290259426*^9}, {3.906134855957391*^9, 3.906134856477436*^9}, 
+   3.906134892957946*^9, 3.9061352858965797`*^9, {3.906135356757229*^9, 
+   3.90613536946918*^9}, 3.90613540421704*^9, {3.906135447963154*^9, 
+   3.906135452306184*^9}, {3.906135923745347*^9, 3.906135933372797*^9}, {
+   3.906135971099784*^9, 
+   3.906135972387808*^9}},ExpressionUUID->"59f77d7a-d75b-4f91-a03c-\
+f5a9bb974d43"],
+
+Cell[TextData[{
+ StyleBox["? Function: ",
+  FontWeight->"Bold"],
+ "Se usa para buscar y listar todas las funciones, s\[IAcute]mbolos y \
+expresiones que tienen nombres que coinciden con un patr\[OAcute]n espec\
+\[IAcute]fico. Por ejemplo, si ejecutas `?*Distribution`, Mathematica mostrar\
+\[AAcute] una lista de todas las funciones, distribuciones y expresiones \
+cuyos nombres contienen dicha palabra . \n\n",
+ StyleBox["?* Function: ",
+  FontWeight->"Bold"],
+ "Se utiliza para buscar informaci\[OAcute]n y ayuda sobre funciones, s\
+\[IAcute]mbolos y expresiones en el sistema. Al escribir `?` seguido de un \
+nombre de funci\[OAcute]n, s\[IAcute]mbolo o expresi\[OAcute]n, obtendremos \
+informaci\[OAcute]n detallada sobre esa entidad.\n\n",
+ StyleBox["@:",
+  FontWeight->"Bold"],
+ " Se utiliza como una forma abreviada de aplicar una funci\[OAcute]n a un \
+argumento. Es una notaci\[OAcute]n alternativa a la notaci\[OAcute]n \
+funcional tradicional de f[expr]. Por ejemplo, en lugar de escribir",
+ StyleBox[" Sin[x]",
+  FontSlant->"Italic"],
+ ", podemos escribir equivalentemente ",
+ StyleBox["Sin @ x",
+  FontSlant->"Italic"],
+ ".\n\n",
+ StyleBox["// :  ",
+  FontWeight->"Bold"],
+ "El s\[IAcute]mbolo // al final de una funci\[OAcute]n en Wolfram \
+Mathematica se utiliza para aplicar una funci\[OAcute]n a un argumento \
+particular. Por ejemplo, si tenemos la funci\[OAcute]n ",
+ StyleBox["Sin",
+  FontSlant->"Italic"],
+ " y deseaamos aplicarla al valor ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ ",  ",
+ StyleBox["x// Sin",
+  FontSlant->"Italic"],
+ ", es equivalente a Sin",
+ StyleBox["[x]",
+  FontSlant->"Italic"],
+ "\n\n",
+ StyleBox["@/ :",
+  FontWeight->"Bold"],
+ " El operador se utiliza para mapear la funci\[OAcute]n a trav\[EAcute]s de \
+una lista de elementos. En otras palabras, es una forma concisa de aplicar \
+una funci\[OAcute]n a todos los elementos de una lista. Por ejemplo, si \
+tenemos una funci\[OAcute]n ",
+ StyleBox["f [x_]:= x^2 ",
+  FontSlant->"Italic"],
+ "y una lista de valores ",
+ StyleBox["lista={1,2,3,4}",
+  FontSlant->"Italic"],
+ ", escribir ",
+ StyleBox["f @/ lista",
+  FontSlant->"Italic"],
+ " aplicar\[AAcute] la funci\[OAcute]n ",
+ StyleBox["f",
+  FontSlant->"Italic"],
+ " a cada elemento de la lista, generando una nueva lista con los resultados \
+de ",
+ StyleBox["{1, 4, 9, 16}.\n\n",
+  FontSlant->"Italic"],
+ StyleBox["[[ ]]: ",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "Se utiliza para acceder a elementos individuales de una lista, matriz u \
+otra estructura de datos indexada. Por ejemplo, si tenemos una lista llamada ",
+ StyleBox["miLista",
+  FontSlant->"Italic"],
+ ", puedes acceder a su primer elemento utilizando miLista[[1]], al segundo \
+elemento con miLista[[2]], y as\[IAcute] sucesivamente.\n",
+ StyleBox["\n",
+  FontSlant->"Italic"],
+ StyleBox["Clear:",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "Se utiliza para eliminar definiciones previas de s\[IAcute]mbolos y \
+funciones. Por ejemplo, si previamente has definido una variable x con un \
+valor espec\[IAcute]fico y luego deseas borrar esa definici\[OAcute]n, \
+podemos hacerlo con Clear[x]. "
+}], "Text",
+ CellChangeTimes->{{3.90613593686674*^9, 3.9061362009591923`*^9}, {
+   3.906136292646862*^9, 3.906136395485675*^9}, {3.906150202029305*^9, 
+   3.906150209596883*^9}, {3.906150243059225*^9, 3.906150264252799*^9}, {
+   3.9061502952328157`*^9, 3.906150408780704*^9}, 3.9061504579139833`*^9, {
+   3.9061513620827847`*^9, 3.906151375051609*^9}, {3.906151410932249*^9, 
+   3.906151535889852*^9}},ExpressionUUID->"b42285d2-b787-4209-8dd2-\
+17ce580f42ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ejercitaci\[OAcute]n & Aplicaci\[OAcute]n", "Subsection",
+ CellChangeTimes->{{3.9061335486088467`*^9, 3.906133558842372*^9}, {
+  3.906150512565592*^9, 
+  3.906150514685584*^9}},ExpressionUUID->"7acd6bbb-ebbc-48f1-abdc-\
+ee90dbf0abfa"],
+
+Cell[TextData[{
+ StyleBox["Ejercicio 1: \n\n(a)  ",
+  FontWeight->"Bold"],
+ "Utiliza la funci\[OAcute]n ",
+ StyleBox["SeedRandom",
+  FontSlant->"Italic"],
+ " para establecer una semilla para la generaci\[OAcute]n de n\[UAcute]meros \
+aleatorios. Luego, utiliza la funci\[OAcute]n",
+ StyleBox[" RandomReal ",
+  FontSlant->"Italic"],
+ "para generar una lista de 20 n\[UAcute]meros aleatorios entre 0 y 1. Guarda \
+esta lista en una variable llamada datos.\n\n",
+ StyleBox["(b) ",
+  FontWeight->"Bold"],
+ "Utiliza la funci\[OAcute]n ",
+ StyleBox["ListPlot",
+  FontSlant->"Italic"],
+ " para crear un gr\[AAcute]fico de dispersi\[OAcute]n de los datos \
+generados. Etiqueta los ejes y dale un t\[IAcute]tulo al gr\[AAcute]fico.\n\n",
+ StyleBox["(c) ",
+  FontWeight->"Bold"],
+ "Cambia la semilla y ejecuta todo el c\[OAcute]digo nuevamente. Observa c\
+\[OAcute]mo cambian los datos generados y el gr\[AAcute]fico resultante.\n\n\
+",
+ StyleBox["Ejercicio 2:",
+  FontWeight->"Bold"],
+ "\n\n",
+ StyleBox["(a)",
+  FontWeight->"Bold"],
+ " Utiliza ",
+ StyleBox["AbsoluteTime",
+  FontSlant->"Italic"],
+ " para obtener la marca de tiempo actual. Luego, usa ",
+ StyleBox["RandomReal ",
+  FontSlant->"Italic"],
+ "para generar un n\[UAcute]mero aleatorio entre 0 y 1. Combina estos dos \
+valores para crear un dato de tiempo aleatorio. Repite este proceso 10 veces \
+y almacena los resultados en una lista llamada datosTemporales.\n\n",
+ StyleBox["(b)",
+  FontWeight->"Bold"],
+ " Crea un gr\[AAcute]fico de l\[IAcute]neas que muestre c\[OAcute]mo cambian \
+los datos temporales con el tiempo, etiquetando los ejes y d\[AAcute]ndole un \
+t\[IAcute]tulo al gr\[AAcute]fico.\n\n",
+ StyleBox["(c)",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "Genera un nuevo conjunto de datos temporales con el tiempo actual y observa \
+c\[OAcute]mo cambian los datos y el gr\[AAcute]fico resultante .\n",
+ "\n",
+ StyleBox["Ejercicio 3: ",
+  FontWeight->"Bold"],
+ "\n\n",
+ StyleBox["(a)",
+  FontWeight->"Bold"],
+ " Genera una lista de 1000 datos aleatorios desde una distribuci\[OAcute]n \
+normal con media (\[Mu]) 5 y desviaci\[OAcute]n est\[AAcute]ndar (\[Sigma]) 2 \
+utilizando la funci\[OAcute]n ",
+ StyleBox["RandomVariate.",
+  FontSlant->"Italic"],
+ "\n\n",
+ StyleBox["(b)",
+  FontWeight->"Bold"],
+ " Crea un histograma de los datos utilizando la funci\[OAcute]n ",
+ StyleBox["Histogram",
+  FontSlant->"Italic"],
+ ". Personaliza el gr\[AAcute]fico, agregando etiquetas de ejes y un t\
+\[IAcute]tulo.\n\n",
+ StyleBox["(c)",
+  FontWeight->"Bold"],
+ " Calcula la funci\[OAcute]n de densidad de probabilidad (PDF) de una \
+distribuci\[OAcute]n normal con \[Mu] = 5 y \[Sigma] = 2 utilizando la funci\
+\[OAcute]n ",
+ StyleBox["PDF",
+  FontSlant->"Italic"],
+ "\n\n",
+ StyleBox["(d) ",
+  FontWeight->"Bold"],
+ "Grafica la PDF junto con el histograma en un solo. Aseg\[UAcute]rate de que \
+el rango del gr\[AAcute]fico muestre adecuadamente tanto el histograma como \
+la PDF.\n\n",
+ StyleBox["Ejercicio 4: ",
+  FontWeight->"Bold"],
+ "\n\n",
+ StyleBox["(a)",
+  FontWeight->"Bold"],
+ " Genera dos listas de datos aleatorios: una con 1000 datos desde una \
+distribuci\[OAcute]n normal con \[Mu] = 0 y \[Sigma] = 1, y la otra con 1000 \
+datos desde una distribuci\[OAcute]n uniforme en el intervalo [0, 1].\n\n",
+ StyleBox["(b)",
+  FontWeight->"Bold"],
+ " Crea un gr\[AAcute]fico que muestre ambas distribuciones en un mismo gr\
+\[AAcute]fico utilizando SmoothHistogram para suavizar los datos.\n\n",
+ StyleBox["(c)",
+  FontWeight->"Bold"],
+ " Calcula la funci\[OAcute]n de distribuci\[OAcute]n acumulativa (CDF) de \
+ambas distribuciones utilizando",
+ StyleBox[" CDF.",
+  FontSlant->"Italic"],
+ "\n\n",
+ StyleBox["(d)",
+  FontWeight->"Bold"],
+ " Grafica las CDF de ambas distribuciones en un solo gr\[AAcute]fico \
+utilizando Plot. Aseg\[UAcute]rate de que el rango del gr\[AAcute]fico sea \
+adecuado para mostrar ambas CDF.\n\n"
+}], "Text",
+ CellChangeTimes->{{3.906133584358007*^9, 3.9061335864911346`*^9}, {
+   3.906150518998489*^9, 3.906150568870984*^9}, {3.906150607998023*^9, 
+   3.906150609885785*^9}, 3.906150870949513*^9, {3.906150923471752*^9, 
+   3.9061511331226873`*^9}, 3.9061515637115*^9, {3.906153123467265*^9, 
+   3.906153152869038*^9}, {3.90615320691404*^9, 3.9061533175727043`*^9}, {
+   3.906153352828562*^9, 3.90615337757412*^9}, {3.906154380429866*^9, 
+   3.906154384358494*^9}, {3.906155767613823*^9, 3.906155768397455*^9}, 
+   3.9061563836753893`*^9, {3.9061565227563267`*^9, 3.906156523580271*^9}, 
+   3.906157369120132*^9},ExpressionUUID->"c2188c84-cb1e-442b-a420-\
+16cd9b979937"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{716, 700},
+WindowMargins->{{4, Automatic}, {1, Automatic}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8902faaf-2b99-4f16-af63-6335621a1b8f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 264, 5, 105, "Section",ExpressionUUID->"74b205bf-fa2b-4e56-ac7e-c68db38090f0"],
+Cell[CellGroupData[{
+Cell[869, 31, 182, 3, 54, "Subsection",ExpressionUUID->"1b9998b3-b5cb-45b6-8136-c5acc969c596"],
+Cell[1054, 36, 7658, 131, 1760, "Text",ExpressionUUID->"0e49d647-a2fa-4d06-b1ac-f5e788ece9b4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8749, 172, 598, 9, 54, "Subsection",ExpressionUUID->"59f77d7a-d75b-4f91-a03c-f5a9bb974d43"],
+Cell[9350, 183, 3616, 90, 702, "Text",ExpressionUUID->"b42285d2-b787-4209-8dd2-17ce580f42ba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13003, 278, 240, 4, 54, "Subsection",ExpressionUUID->"7acd6bbb-ebbc-48f1-abdc-ee90dbf0abfa"],
+Cell[13246, 284, 4587, 116, 1254, "Text",ExpressionUUID->"c2188c84-cb1e-442b-a420-16cd9b979937"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

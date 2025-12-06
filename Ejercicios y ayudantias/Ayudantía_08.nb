@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4065,        102]
+NotebookOptionsPosition[      3592,         85]
+NotebookOutlinePosition[      3987,        101]
+CellTagsIndexPosition[      3944,         98]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Ayudant\[IAcute]a 08 : Trabajando con Cu\[AAcute]sares", "Section",
+ CellChangeTimes->{{3.9072397203241262`*^9, 3.907239725243979*^9}, {
+   3.907276953659925*^9, 3.9072769606914663`*^9}, 
+   3.9072789558782063`*^9},ExpressionUUID->"68ed9321-cf9f-4987-88b7-\
+e2521fc62ed1"],
+
+Cell[TextData[{
+ "1. Utiliza la funci\[OAcute]n Directory para mostrar el directorio de \
+trabajo actual.\n\n2. Utiliza la funci\[OAcute]n NotebookDirectory para \
+obtener el directorio del cuaderno actual.\n\n3. Importa los datos del \
+archivo \[OpenCurlyDoubleQuote]astrostatistics.psu.edu_MSMA_datasets_SDSS_QSO-\
+ .dat\[CloseCurlyDoubleQuote], el cual contiene una base de datos de cu\
+\[AAcute]sares descubiertos a varios valores de redshift. Ponle el nombre a \
+la variable.\n\n4.  Imprime el ",
+ StyleBox["header",
+  FontSlant->"Italic"],
+ " para obtener una idea general de los datos.\n\n5. Genera una variable \
+denominada \[OpenCurlyDoubleQuote]",
+ StyleBox["dat1",
+  FontSlant->"Italic"],
+ "\[CloseCurlyDoubleQuote] que almacene los datos importados excluyendo el \
+encabezado y que incluya \[UAcute]nicamente las filas en las cuales los \
+valores de ",
+ StyleBox["magnitud en r, magnitud en g",
+  FontSlant->"Italic"],
+ " y ",
+ StyleBox["magnitud en u ",
+  FontSlant->"Italic"],
+ "sean mayores a 15.0. Aseg\[UAcute]rate de trabajar con las columnas \
+correspondientes.\n\n6. Crea una distribuci\[OAcute]n de kernel suave con los \
+datos de la",
+ StyleBox[" magnitud en el filtro u ",
+  FontSlant->"Italic"],
+ " y visualiza la distribuci\[OAcute]n estimada.",
+ "\n\n7. Utiliza FindDistribution para intentar identificar las mejores dos \
+distribuciones de probabilidad que mejor se ajusten a los datos. Almacena las \
+distribuci\[OAcute]nes identificada en una variable llamada \
+\[OpenCurlyDoubleQuote]mejorDistribucion\[CloseCurlyDoubleQuote]. Graficalas \
+y comparalas en un mismo gr\[AAcute]fico.\n\n8. Halla el modelo de \
+distribucion bimodal que mejor se ajuste a los datos utilizando la funci\
+\[OAcute]n MixtureDistribution. Graf\[IAcute]cala y comp\[AAcute]rala con los \
+datos reales.\n\n9. Repite el mismo procedimiento con el ",
+ StyleBox["redshift, magnitud en g ",
+  FontSlant->"Italic"],
+ "y ",
+ StyleBox["magnitud en r",
+  FontSlant->"Italic"],
+ ".",
+ "\n"
+}], "Text",
+ CellChangeTimes->{{3.907276966228181*^9, 3.907276966572144*^9}, {
+  3.907277306997806*^9, 3.9072773117098293`*^9}, {3.907277788400445*^9, 
+  3.9072777972845716`*^9}, {3.907277885694603*^9, 3.9072778876953783`*^9}, {
+  3.907277950169876*^9, 3.9072779695919733`*^9}, {3.907278006579249*^9, 
+  3.9072780139636393`*^9}, {3.907278045003104*^9, 3.907278055700696*^9}, {
+  3.907278105415443*^9, 3.907278256897614*^9}, {3.907278292800261*^9, 
+  3.9072783061903763`*^9}, {3.907278347215947*^9, 3.907278380008827*^9}, {
+  3.907278692249877*^9, 3.90727879470955*^9}, {3.9072791681921797`*^9, 
+  3.9072791893606052`*^9}, {3.907280678648947*^9, 
+  3.9072807339118958`*^9}},ExpressionUUID->"20c01707-aa04-4b95-8585-\
+de9c036603cb"]
+}, Open  ]]
+},
+WindowSize->{911, 701},
+WindowMargins->{{Automatic, 13}, {1, Automatic}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"94c52b3a-51e5-488f-85d1-ace6a41afdcd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 278, 4, 67, "Section",ExpressionUUID->"68ed9321-cf9f-4987-88b7-e2521fc62ed1"],
+Cell[861, 28, 2715, 54, 564, "Text",ExpressionUUID->"20c01707-aa04-4b95-8585-de9c036603cb"]
+}, Open  ]]
+}
+]
+*)
+

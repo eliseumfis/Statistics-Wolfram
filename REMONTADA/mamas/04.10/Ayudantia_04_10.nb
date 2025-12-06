@@ -1,0 +1,35 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+"\<Ejercicios\>","Subsection",ExpressionUUID -> "3302aab9-b5ce-40b4-9f28-bbdb94099ef8"],Cell[
+TextData[
+{"\n","Ejercicio"," ","1",StyleBox[RowBox[{":"," "}]],"En"," ","una"," ","universidad",StyleBox[
+RowBox[{","," "}]],"la"," ","probabilidad"," ","de"," ","que"," ","1"," ","miembro"," ","de"," ","staff"," ","est\[EAcute]"," ","ausente"," ","es"," ","de"," ","0",".","01",StyleBox[
+RowBox[{","," "}]],"si"," ","se"," ","tienen"," ","200"," ","miembros"," ","de"," ","staff",StyleBox[
+RowBox[{","," "}]],"\[DownQuestion]cual"," ","es"," ","la"," ","probabilidad"," ","de"," ","tener"," ","menos"," ","de"," ","3"," ","miembros"," ","de"," ","staff"," ","ausentes","?"}],
+"Text",ExpressionUUID -> "8fd7bb33-a93b-4de1-903f-6cfaeff9601f"],Cell[
+TextData[{"Ejercicio"," ","2",StyleBox[
+RowBox[{":"," "}]],"Si"," ","se"," ","sabe"," ","que"," ","en"," ","250"," ","litros"," ","de"," ","agua"," ","se"," ","tienen"," ","aproximadamente"," ","10","^","6"," ","bacterias",StyleBox[
+RowBox[{","," "}]],"\[DownQuestion]cu\[AAcute]l"," ","es"," ","la"," ","probabilidad"," ","de"," ","que"," ","en"," ","1"," ","mililitro"," ","no"," ","se"," ","encuentre"," ","ni"," ","una"," ","sola"," ","bacteria","?"}],
+"Text",ExpressionUUID -> "99d8f87b-2026-401a-a769-76ba974d18b5"],Cell[
+TextData[{"Ejercicio"," ","3",StyleBox[
+RowBox[{":"," "}]],"A"," ","lo"," ","largo"," ","de"," ","un"," ","a\[NTilde]o",StyleBox[
+RowBox[{","," "}]],"1"," ","millon"," ","de"," ","\[AAcute]tomos"," ","de"," ","Cesio"," ","137"," ","decayeron"," ","por"," ","procesos"," ","at\[OAcute]micos"," ","a"," ","un"," ","total"," ","de"," ","977287"," ","\[AAcute]tomos",StyleBox[
+RowBox[{"."," "}]],"Hayar"," ","la"," ","probabilidad"," ","de"," ","que",StyleBox[
+RowBox[{","," "}]],"en"," ","un"," ","d\[IAcute]a"," ","cualquiera",StyleBox[RowBox[
+{","," "}]],"hubieran"," ","deca\[IAcute]do"," ","50"," ","\[AAcute]tomos","."}],
+"Text",ExpressionUUID -> "be2a6002-f1cf-431e-b466-ebe6c25812f3"],Cell[
+TextData[{"Ejercicio"," ","4",StyleBox[
+RowBox[{":"," "}]],"En"," ","un"," ","pueblo"," ","de"," ","10",".","000"," ","habitantes"," ","se"," ","quiere"," ","construir"," ","un"," ","nuevo"," ","hospital",StyleBox[
+RowBox[{","," "}]],"se"," ","ha"," ","evidenciado"," ","que"," ","en"," ","este"," ","pueblo"," ","se"," ","suele"," ","tener"," ","un"," ","promedio"," ","de"," ","3"," ","pacientes"," ","en"," ","necesidad"," ","de"," ","atenci\[OAcute]n"," ","m\[EAcute]dica"," ","por"," ","d\[IAcute]a",StyleBox[
+RowBox[{"."," "}]],"\[DownQuestion]Cu\[AAcute]l"," ","es"," ","la"," ","capacidad"," ","m\[IAcute]nima"," ","que"," ","este"," ","hospital"," ","debe"," ","tener"," ","para"," ","que",StyleBox[
+RowBox[{","," "}]],"en"," ","general",StyleBox[RowBox[{","," "}]],"no"," ","se"," ","tengan"," ","m\[AAcute]s"," ","de"," ","5"," ","d\[IAcute]as"," ","al"," ","a\[NTilde]o"," ","donde"," ","se"," ","exceda"," ","su"," ","capacidad","?"}],
+"Text",ExpressionUUID -> "de8e3bd0-d3e1-47f4-ad70-833b8e544e57"],Cell[
+TextData[{"Ejercicio"," ","5",StyleBox[
+RowBox[{":"," "}]],"En"," ","una"," ","regi\[OAcute]n"," ","de"," ","cierto"," ","pa\[IAcute]s"," ","se"," ","tiene"," ","una"," ","serie"," ","de"," ","centros"," ","urbanos"," ","de"," ","poblaci\[OAcute]n"," ","similar",StyleBox[
+RowBox[{"."," "}]],"Se"," ","quiere"," ","construir"," ","una"," ","central"," ","de"," ","generaci\[OAcute]n"," ","el\[EAcute]ctrica"," ","que"," ","cubra"," ","la"," ","demanda"," ","de"," ","esta"," ","regi\[OAcute]n",StyleBox[
+RowBox[{","," "}]],"se"," ","sabe"," ","que"," ","el"," ","consumo"," ","el\[EAcute]ctrico"," ","por"," ","c\[AAcute]pita"," ","de"," ","la"," ","regi\[OAcute]n"," ","es"," ","de"," ","500"," ","Watts",StyleBox[
+RowBox[{","," "}]],"cada"," ","centro"," ","poblacional"," ","tiene"," ","un"," ","total"," ","de"," ","100",".","000"," ","personas",StyleBox[
+RowBox[{","," "}]],"asumiendo"," ","que"," ","la"," ","capacidad"," ","de"," ","la"," ","nueva"," ","central"," ","es"," ","de"," ","1"," ","GW",":","\n","\n","a",StyleBox[
+RowBox[{")"," "}]],"\[DownQuestion]Cual"," ","es"," ","la"," ","probabilidad"," ","de"," ","que"," ","1"," ","centro"," ","urbano"," ","exceda"," ","la"," ","capacidad"," ","de"," ","la"," ","central","?\n","\n","b) \[DownQuestion]Cu\[AAcute]ntas ciudades puede mantener esta central si queremos que no se exceda su capacidad el 95% del tiempo?"}],
+"Text",ExpressionUUID -> "6c9804c7-50f2-433d-9fe8-c4bdc84a6a2e"]},Open],ExpressionUUID -> "5c7b786f-4002-4cff-a204-b5d8d1de4884"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "14.1 for Wolfram Cloud 1.69.0.1 (September 4, 2024)"]
